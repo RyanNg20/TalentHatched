@@ -1,0 +1,24 @@
+{
+  "name": "talenthatched",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanNg20/TalentHatched.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanNg20/TalentHatched/issues"
+  },
+  "homepage": "https://github.com/RyanNg20/TalentHatched#readme",
+  "engines": {
+    "node": "10.16.0"
+}
+}
