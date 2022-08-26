@@ -1,5 +1,4 @@
 const models = require('./models')
-const { OAuth2Client } = require('google-auth-library')
 
 
 const upsertUser = async (req, res) => {
