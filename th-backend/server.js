@@ -18,7 +18,7 @@ app.use('/api', routes)
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
   app.listen(process.env.PORT, () => {
-    console.log(`listening on port ${process.env.PORT}`)
+    console.log(`listening on port ${process.env.PORT || 4000}`)
   })
 })
 .catch((err) => {
