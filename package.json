@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/RyanNg20/TalentHatched#readme",
   "engines": {
-    "node": "10.16.0"
+    "node": "18.4.0"
 }
 }
