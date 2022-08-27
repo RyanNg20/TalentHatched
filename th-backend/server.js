@@ -3,8 +3,16 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const express = require('express')
 const routes = require('./routes')
+const path = require('path')
 
 const app = express()
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./th-frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../th-frontend/build", "index.html"));
+});
 
 app.use(express.json())
 
