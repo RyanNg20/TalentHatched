@@ -7,13 +7,6 @@ const path = require('path')
 
 const app = express()
 
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./th-frontend/build")));
-// Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "../th-frontend/build", "index.html"));
-});
-
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -32,3 +25,10 @@ mongoose.connect(process.env.MONG_URI)
 .catch((err) => {
   console.log(err)
 })
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./th-frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../th-frontend/build", "index.html"));
+});
