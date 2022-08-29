@@ -29,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <div id="signInDiv"></div>
+      <h1>hi</h1>
       {user && 
       <h1>
         {user.given_name} is logged in
