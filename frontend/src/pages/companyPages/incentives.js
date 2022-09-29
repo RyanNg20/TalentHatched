@@ -9,7 +9,7 @@ const Incentives = () => {
   return (
     <div>
       Incentives
-      <Button link="company"/>
+      <Button link="../viewJob"/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const JobSearch1 = () => {
   return (
     <div>
       JobSearch1
-      <Button link="company"/>
+      <Button link="../jobSearch2"/>
     </div>
   )
 }

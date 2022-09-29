@@ -4,13 +4,12 @@ const Flow = () => {
   return (
     <div>
       flow
-      {/* <Link to={"applicantStart"}>
+      <Link to={"../welcome"}>
         Applicant
       </Link>
-      <Link to={"companyStart"}>
+      <Link to={"../entry"}>
         Company
       </Link>
-      <Outlet/> */}
     </div>
   )
 }

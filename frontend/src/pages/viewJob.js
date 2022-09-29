@@ -9,7 +9,6 @@ const ViewJob = () => {
   return (
     <div>
       ViewJob
-      <Button link="company"/>
     </div>
   )
 }

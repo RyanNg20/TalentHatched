@@ -9,7 +9,7 @@ const Company = () => {
   return (
     <div>
       Company
-      <Button link=""/>
+      <Button link="../companyProfile"/>
     </div>
   )
 }

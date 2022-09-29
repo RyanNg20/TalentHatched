@@ -9,7 +9,7 @@ const Skills = () => {
   return (
     <div>
       skills
-      <Button link="company"/>
+      <Button link="../projects"/>
     </div>
   )
 }

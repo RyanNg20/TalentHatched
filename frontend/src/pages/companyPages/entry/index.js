@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom"
-import Button from "../../components/button"
+import Button from "../../../components/button"
 
 /*
 Props:
@@ -9,7 +9,7 @@ const Entry = () => {
   return (
     <div>
       Entry
-      <Button link="company"/>
+      <Button link="../company" title="company"/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const ApplicantProfile = () => {
   return (
     <div>
       ApplicantProfile
-      <Button link="company"/>
+      <Button link="../jobs"/>
     </div>
   )
 }

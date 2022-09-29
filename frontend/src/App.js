@@ -1,12 +1,14 @@
 import './App.css';
-import Flow from './pages/flow';
 import colors from './colors';
+import Button from './components/button';
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  colors()
+
   return (
     <div className="App">
-      <Flow/>
+      <Button link="flow" title="flow"/>
+      <Outlet/>
     </div>
   );
 }
