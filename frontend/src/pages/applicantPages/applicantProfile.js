@@ -1,0 +1,17 @@
+import { Outlet, Link } from "react-router-dom"
+import Button from "../../components/button"
+
+/*
+Props:
+*/
+
+const ApplicantProfile = () => {
+  return (
+    <div>
+      ApplicantProfile
+      <Button link="company"/>
+    </div>
+  )
+}
+
+export default ApplicantProfile

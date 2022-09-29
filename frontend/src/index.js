@@ -3,17 +3,26 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Error from './pages/error';
+import Flow from './pages/flow';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+    errorElement: <Error/>,
+    children: [
+      {
+        path: "flow",
+        element: <Flow/>,
+      },
+    ]
   },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

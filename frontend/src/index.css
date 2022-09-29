@@ -1,10 +1,16 @@
 body {
+  --denim: #191E23;
+  --orange: #FFA100;
+  --spruce: #232D39;
+  --slate: #303439;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--denim);
+  color: white;
 }
 
 code {
