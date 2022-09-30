@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import colors from '../../colors'
+import colors from '../colors'
 
 export const ButtonWrapper = styled.div`
   background-color: ${colors.orange};

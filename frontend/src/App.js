@@ -1,5 +1,5 @@
 import './App.css';
-import colors from './colors';
+import colors from './components/colors';
 import Button from './components/button';
 import { Outlet } from 'react-router-dom';
 
