@@ -1,23 +1,43 @@
 import styled from 'styled-components'
 
-export const BigBold = styled.h1`
-    font-size: 32px;
-    font-weight: 700;
+export const Bold48 = styled.h1`
+    font-size: 48px;
+    font-weight: 800;
     font-family: Red Hat Display;
+    margin: 0px;
 `
 
-export const Bold = styled.h1`
+export const Bold24 = styled.h2`
     font-size: 24px;
     font-weight: 700;
     font-family: Red Hat Display;
+    margin: 0px;
 `
-export const regular = styled.h1`
+export const Reg20 = styled.h4`
     font-size: 20px;
     font-weight: 400;
     font-family: Red Hat Display;
+    margin: 0px;
 `
-export const reuglarItalic = styled.h1`
+export const Reg18 = styled.h5`
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Red Hat Display;
+    margin: 0px;
+`
+export const Reg16 = styled.h6`
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Red Hat Display;
+    margin: 0px;
+`
+export const ItaReg20 = styled.h1`
     font-size: 20px;
     font-weight: 400;
     font-family: Red Hat Display Italic;
+    margin: 0px;
+`
+
+export const PageWrapper = styled.div`
+    padding: 150px 27%;
 `

@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom"
 import Button from "../../../components/button"
-import { BigBold } from "../../../components/style"
+import { Bold48 } from "../../../components/style"
 
 /*
 Props:
@@ -9,9 +9,9 @@ Props:
 const Company = () => {
   return (
     <div>
-      <BigBold>
+      <Bold48>
         Company
-      </BigBold>
+      </Bold48>
       <Button link="../companyProfile"/>
     </div>
   )
