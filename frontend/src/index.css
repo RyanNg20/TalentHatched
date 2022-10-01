@@ -12,6 +12,17 @@ body {
   background-color: var(--denim);
   color: white;
   text-decoration: none;
+  font-family: Red Hat Display;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("./assets/fonts/RedHatDisplay-VariableFont_wght.ttf")
+}
+
+@font-face {
+  font-family: "Red Hat Display Italic";
+  src: url("./assets/fonts/RedHatDisplay-Italic-VariableFont_wght.ttf")
 }
 
 code {

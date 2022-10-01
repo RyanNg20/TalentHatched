@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
+  BrowserRouter as Router,
+  Routes,
+  Route,
   RouterProvider,
 } from "react-router-dom"
 import './index.css';
@@ -25,40 +27,33 @@ import CompanyProfile from './pages/companyPages/companyProfile';
 import Details from './pages/companyPages/details';
 import Entry from './pages/companyPages/entry';
 import Incentives from './pages/companyPages/incentives';
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-    errorElement: <Error/>,
-    children: [
-      { path: "flow", element: <Flow/> },
-      { path: "applicantProfile", element: <ApplicantProfile/> },
-      { path: "finish", element: <Finish/> }, 
-      { path: "info", element: <Info/> },
-      { path: "jobs", element: <Jobs/> },
-      { path: "jobSearch1", element: <JobSearch1/> },
-      { path: "jobSearch2", element: <JobSearch2/> },
-      { path: "jobSettings", element: <JobSettings/> },
-      { path: "projects", element: <Projects/> },
-      { path: "skills", element: <Skills/> },
-      { path: "softSkills", element: <SoftSkills/> },
-      { path: "welcome", element: <Welcome/> },
-      { path: "company", element: <Company/> },
-      { path: "companyProfile", element: <CompanyProfile/> },
-      { path: "details", element: <Details/> },
-      { path: "entry", element: <Entry/> },
-      { path: "incentives", element: <Incentives/> },
-    ]
-  },
-
-]);
+import Navbar from './components/navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="flow" element={ <Flow/> } />
+        <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
+        <Route path="finish" element={ <Finish/> }/>
+        <Route path="info" element={ <Info/> }/>
+        <Route path="jobs" element={ <Jobs/> }/>
+        <Route path="jobSearch1" element={ <JobSearch1/> }/>
+        <Route path="jobSearch2" element={ <JobSearch2/> }/>
+        <Route path="jobSettings" element={ <JobSettings/> }/>
+        <Route path="projects" element={ <Projects/> }/>
+        <Route path="skills" element={ <Skills/> }/>
+        <Route path="softSkills" element={ <SoftSkills/> }/>
+        <Route path="welcome" element={ <Welcome/> }/>
+        <Route path="company" element={ <Company/> }/>
+        <Route path="companyProfile" element={ <CompanyProfile/> }/>
+        <Route path="details" element={ <Details/> }/>
+        <Route path="entry" element={ <Entry/> }/>
+        <Route path="incentives" element={ <Incentives/> }/>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
