@@ -36,6 +36,7 @@ root.render(
       <PageWrapper>
         <Navbar/>
         <Routes>
+          <Route path="" element={ <App/>} />
           <Route path="flow" element={ <Flow/> } />
           <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
           <Route path="finish" element={ <Finish/> }/>
