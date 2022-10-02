@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom"
-import Button from "../../components/button"
+import { Button } from "../../components/buttons"
+import { Bold48 } from "../../components/style"
 
 /*
 Props:
@@ -8,7 +9,9 @@ Props:
 const CompanyProfile = () => {
   return (
     <div>
-      CompanyProfile
+      <Bold48>
+        CompanyProfile
+      </Bold48>
       <Button link="../details"/>
     </div>
   )

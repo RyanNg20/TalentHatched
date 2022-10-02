@@ -1,5 +1,6 @@
-import { Outlet, Link } from "react-router-dom"
-import Button from "../../../components/button"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import { SubmitButton } from "../../../components/buttons"
 import { Bold48 } from "../../../components/style"
 
 /*
@@ -7,13 +8,18 @@ Props:
 */
 
 const Company = () => {
+  const navigate = useNavigate()
+
+  const [submit, setSubmit] = useState(false)
+
+
   return (
-    <div>
-      <Bold48>
-        Company
+    <form onSubmit={() => {navigate("/companyProfile")}}>
+      <Bold48 style={{marginBottom: '100px'}}>
+        Tell us about your company
       </Bold48>
-      <Button link="../companyProfile"/>
-    </div>
+      <SubmitButton link="../companyProfile" />
+    </form>
   )
 }
 
