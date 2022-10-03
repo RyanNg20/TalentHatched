@@ -41,3 +41,10 @@ export const ItaReg20 = styled.h1`
 export const PageWrapper = styled.div`
     padding: 150px 27%;
 `
+
+export const HeaderWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 60px;
+`

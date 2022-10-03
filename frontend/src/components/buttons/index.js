@@ -1,26 +1,33 @@
 import { Link } from "react-router-dom"
 import { Reg18 } from "../style"
-import { ButtonWrapper } from "./style"
+import { ButtonWrapper, ArrowWrapper } from "./style"
+import { IoArrowBackOutline } from 'react-icons/io5'
 
-export const SubmitButton = ({title}) => {
+export const Button = ({title, disable, type, link}) => {
+  if (!disable) disable = false
 
-  return (
-    <ButtonWrapper type="submit">
+  const button = (
+    <ButtonWrapper type="submit" disable={disable}>
       <Reg18>
         {title?title:"Next"}
       </Reg18>
     </ButtonWrapper>
   )
+  if (type == 'form') return button
+  else
+    return (
+      <Link to={link} style={{textDecoration: 'none'}}>
+        {button}
+      </Link>
+    )
 }
 
-export const Button = ({title, link}) => {
+export const BackButton = ({link}) => {
   return (
     <Link to={link} style={{textDecoration: 'none'}}>
-      <ButtonWrapper type="submit">
-        <Reg18>
-          {title?title:"Next"}
-        </Reg18>
-      </ButtonWrapper>
+      <ArrowWrapper>
+        <IoArrowBackOutline size={24}/>
+      </ArrowWrapper>
     </Link>
   )
 }

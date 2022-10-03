@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { SubmitButton } from "../../../components/buttons"
+import { Button } from "../../../components/buttons"
 import { Bold48, Bold24, Reg20 } from "../../../components/style"
 import EntryImage from '../../../assets/images/entryImage.svg'
 import { BottomWrapper, LeftWrapper } from "./style"
@@ -13,16 +13,22 @@ Props:
 const Entry = (props) => {
   const navigate = useNavigate()
 
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
   const [submit, setSubmit] = useState(false)
+  const [disable, setDisable] = useState(true)
+
+  console.log(email && password && disable)
   useEffect(() => {
-    if (submit) navigate("/company")
-  },[submit])
+    if (email && password && disable) setDisable(false)
+    else if (!email && !password && !disable) setDisable(true)
+  }, [email, password])
 
   const onSubmit = async () => {
     // backend stuff
     setSubmit(true)
+
+    navigate("/company")
   }
 
   return (
@@ -39,7 +45,7 @@ const Entry = (props) => {
             <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" margin="40px 0px 20px 0px" required onChange={(e) => {setEmail(e.target.value)}}/>
             <Input title="Password" placeholder={""} type="default" margin="20px 0px" required onChange={(e) => {setPassword(e.target.value)}}/>
           </div>
-          <SubmitButton link="../company" title="Create Account" />
+          <Button title="Create Account" disable={disable} type={'form'}/>
         </LeftWrapper>
         <img src={EntryImage}/>
       </BottomWrapper>
