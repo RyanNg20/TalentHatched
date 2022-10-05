@@ -2,7 +2,7 @@ import colors from "../colors"
 import { Reg16, Reg18 } from "../style"
 import { FormInput, FormSelect, FormTextArea, InputWrapper, TitleWrapper } from "./style"
 
-const Input = ({title, placeholder, type, margin, required, onChange, width}) => {
+const Input = ({title, placeholder, type, margin, required, onChange, width, value}) => {
   let inputComponent
 
   switch (type) {
@@ -21,7 +21,7 @@ const Input = ({title, placeholder, type, margin, required, onChange, width}) =>
     case "autofill":
         inputComponent = (
           <>
-            <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} list={'browsers'} width={width}/>
+            <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} list={'browsers'} width={width} value={value}/>
             <datalist id="browsers">
               <option value="Chrome"></option>
               <option value="Firefox"></option>
@@ -34,11 +34,11 @@ const Input = ({title, placeholder, type, margin, required, onChange, width}) =>
         )
         break;
     case "textarea":
-        inputComponent = <FormTextArea type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width}/>
+        inputComponent = <FormTextArea type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
         
         break;
     default:
-      inputComponent = <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width}/>
+      inputComponent = <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
 
   }
 

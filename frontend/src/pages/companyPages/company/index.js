@@ -13,7 +13,10 @@ const Company = () => {
 
   const [submit, setSubmit] = useState(false)
 
-
+  const onSubmit = (e) => {
+    e.preventDefault()
+    navigate("/companyProfile")
+  }
   return (
     <>
       <HeaderWrapper>
@@ -22,7 +25,7 @@ const Company = () => {
           Tell us about your company
         </Bold48>
       </HeaderWrapper>
-      <form onSubmit={() => {navigate("/companyProfile")}} id="form">
+      <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <div style={{marginLeft: '100px'}}>
           <Input type="" title="Company Name" placeholder="Talent Hatched" margin="30px 0px" required width="400px"/>
           <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
@@ -30,7 +33,7 @@ const Company = () => {
           <Input type="" title="City" placeholder="Sacramento" margin="30px 0px" required width="400px"/>
           <Input type="" title="State" placeholder="California" margin="30px 0px" required width="300px"/>
           <Input type="" title="Zip Code" placeholder="21420" margin="30px 0px" required width="200px"/>
-          <Input type="textarea" title="Company Description"  margin="30px 0px 60px 0px" required width="600px"/>
+          <Input type="textarea" title="Company Description"  margin="30px 0px 60px 0px" width="600px"/>
         </div>
         <Button link="../companyProfile" type={'form'}/>
       </form>

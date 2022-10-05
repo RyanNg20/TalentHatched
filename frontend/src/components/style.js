@@ -39,7 +39,7 @@ export const ItaReg20 = styled.h1`
 `
 
 export const PageWrapper = styled.div`
-    padding: 150px 27%;
+    padding: 150px 20%;
 `
 
 export const HeaderWrapper = styled.div`

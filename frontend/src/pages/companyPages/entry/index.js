@@ -13,18 +13,31 @@ Props:
 const Entry = (props) => {
   const navigate = useNavigate()
 
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [submit, setSubmit] = useState(false)
   const [disable, setDisable] = useState(true)
 
-  console.log(email && password && disable)
+  useEffect(() => {
+    if (sessionStorage.getItem("email")) setEmail(sessionStorage.getItem("email"))
+    if (sessionStorage.getItem("password")) setPassword(sessionStorage.getItem("password"))
+  }, [])
+
+  useEffect(() => {
+    sessionStorage.setItem("email", email);
+  }, [email]);
+
+  useEffect(() => {
+    sessionStorage.setItem("password", password);
+  }, [password]);
+
   useEffect(() => {
     if (email && password && disable) setDisable(false)
     else if (!email && !password && !disable) setDisable(true)
   }, [email, password])
 
-  const onSubmit = async () => {
+  const onSubmit = async (e) => {
+    e.preventDefault()
     // backend stuff
     setSubmit(true)
 
@@ -37,15 +50,16 @@ const Entry = (props) => {
         We simplify your recruitment process. <br/> Ready to get started?
       </Bold48>
       <BottomWrapper>
-        <LeftWrapper onSubmit={() => {onSubmit()}}>
+        <LeftWrapper onSubmit={(e) => {onSubmit(e)}} id="form">
           <div>
             <Reg20>
               Login or Signup
             </Reg20>
-            <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" margin="40px 0px 20px 0px" required onChange={(e) => {setEmail(e.target.value)}}/>
-            <Input title="Password" placeholder={""} type="default" margin="20px 0px" required onChange={(e) => {setPassword(e.target.value)}}/>
+            <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" margin="40px 0px 20px 0px" required onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+            <Input title="Password" placeholder={""} type="default" margin="20px 0px" required onChange={(e) => {setPassword(e.target.value)}} value={password}/>
           </div>
           <Button title="Create Account" disable={disable} type={'form'}/>
+
         </LeftWrapper>
         <img src={EntryImage}/>
       </BottomWrapper>
