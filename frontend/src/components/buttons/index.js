@@ -1,30 +1,51 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Reg18 } from "../style"
-import { ButtonWrapper, ArrowWrapper } from "./style"
-import { IoArrowBackOutline } from 'react-icons/io5'
+import { ButtonWrapper, ArrowWrapper, CheckMarkWrapper } from "./style"
+import { IoArrowBackOutline, IoCheckmarkOutline } from 'react-icons/io5'
 
-export const Button = ({title, disable, type, link}) => {
+export const Button = ({title, disable, link, margin}) => {
   if (!disable) disable = false
 
-  const button = (
-    <ButtonWrapper type="submit" disable={disable}>
+  return (
+    <Link to={link} style={{textDecoration: 'none', margin}}>
+      <ButtonWrapper type="submit" disable={disable}>
+        <Reg18>
+          {title?title:"Next"}
+        </Reg18>
+      </ButtonWrapper>
+    </Link>
+  )
+}
+
+export const SelectButton = ({title, margin}) => {
+  const [disable, setDisable] = useState(true)
+
+  return (
+    <ButtonWrapper type="button" disable={disable} onClick={() => {setDisable(!disable)}} margin={margin}>
+      <Reg18>
+        {title?title:"Next"}
+      </Reg18>
+      <CheckMarkWrapper disable={disable}>
+        <IoCheckmarkOutline size={18}/>
+      </CheckMarkWrapper>
+    </ButtonWrapper>
+  )
+}
+
+export const FormButton = ({title, disable, margin}) => {
+  return(
+    <ButtonWrapper type="submit" disable={disable} margin={margin}>
       <Reg18>
         {title?title:"Next"}
       </Reg18>
     </ButtonWrapper>
   )
-  if (type == 'form') return button
-  else
-    return (
-      <Link to={link} style={{textDecoration: 'none'}}>
-        {button}
-      </Link>
-    )
 }
 
-export const BackButton = ({link, onClick}) => {
+export const BackButton = ({link, onClick, margin}) => {
   return (
-    <Link to={link} style={{textDecoration: 'none'}}>
+    <Link to={link} style={{textDecoration: 'none', margin}}>
       <ArrowWrapper onClick={onClick}>
         <IoArrowBackOutline size={24}/>
       </ArrowWrapper>

@@ -49,3 +49,7 @@ export const HeaderWrapper = styled.div`
     align-items: center;
     margin-bottom: 60px;
 `
+
+export const FormpageWrapper = styled.div`
+
+`

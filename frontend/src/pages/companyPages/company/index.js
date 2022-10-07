@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { BackButton, Button } from "../../../components/buttons"
+import { BackButton, FormButton } from "../../../components/buttons"
 import Input from "../../../components/input"
 import { Bold48, HeaderWrapper } from "../../../components/style"
 
@@ -35,7 +35,7 @@ const Company = () => {
           <Input type="" title="Zip Code" placeholder="21420" margin="30px 0px" required width="200px"/>
           <Input type="textarea" title="Company Description"  margin="30px 0px 60px 0px" width="600px"/>
         </div>
-        <Button link="../companyProfile" type={'form'}/>
+        <FormButton/>
       </form>
     </>
   )

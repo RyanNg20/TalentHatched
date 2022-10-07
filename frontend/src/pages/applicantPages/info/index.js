@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, BackButton } from "../../../components/buttons"
+import { FormButton, BackButton } from "../../../components/buttons"
 import { useNavigate } from "react-router-dom"
 import Input from "../../../components/input"
 import { Bold48, HeaderWrapper } from "../../../components/style"
@@ -33,7 +33,7 @@ const Info = ({page, onBackClick, onNextClick}) => {
           <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
           <Input type="" title="Personal Email" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px"/>
         </div>
-        <Button type={'form'}/>
+        <FormButton type={'form'} margin="40px 0px"/>
       </form>
     </InfoWrapper>
   )

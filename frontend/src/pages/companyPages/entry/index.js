@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Button } from "../../../components/buttons"
+import { FormButton } from "../../../components/buttons"
 import { Bold48, Bold24, Reg20 } from "../../../components/style"
 import EntryImage from '../../../assets/images/entryImage.svg'
 import { BottomWrapper, LeftWrapper } from "./style"
@@ -58,7 +58,7 @@ const Entry = (props) => {
             <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" margin="40px 0px 20px 0px" required onChange={(e) => {setEmail(e.target.value)}} value={email}/>
             <Input title="Password" placeholder={""} type="default" margin="20px 0px" required onChange={(e) => {setPassword(e.target.value)}} value={password}/>
           </div>
-          <Button title="Create Account" disable={disable} type={'form'}/>
+          <FormButton title="Create Account" disable={disable}/>
 
         </LeftWrapper>
         <img src={EntryImage}/>
