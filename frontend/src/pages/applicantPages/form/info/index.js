@@ -1,26 +1,30 @@
 import { useState } from "react"
-import { FormButton, BackButton } from "../../../components/buttons"
+import { FormButton, BackButton } from "../../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../components/style"
-import { SkillsWrapper } from "./style"
+import Input from "../../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../../components/style"
+import { FormPageWrapper } from "../style"
 
 /*
 Props:
 */
 
-const Skills = ({page, onBackClick, onNextClick}) => {
+const Info = ({page, onBackClick, onNextClick}) => {
+  const navigate = useNavigate()
+
+  const [submit, setSubmit] = useState(false)
+
   const onSubmit = (e) => {
     e.preventDefault()
     onNextClick()
   }
 
   return (
-    <SkillsWrapper page={page}>
+    <FormPageWrapper page={page} thisPage={0}>
       <HeaderWrapper>
-        <BackButton onClick={onBackClick}/>
+        <BackButton link={"/welcome"}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Skills
+          Info
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
@@ -29,10 +33,10 @@ const Skills = ({page, onBackClick, onNextClick}) => {
           <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
           <Input type="" title="Personal Email" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px"/>
         </div>
-        <FormButton/>
+        <FormButton type={'form'} margin="40px 0px"/>
       </form>
-    </SkillsWrapper>
+    </FormPageWrapper>
   )
 }
 
-export default Skills
+export default Info

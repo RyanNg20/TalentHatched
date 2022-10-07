@@ -1,26 +1,27 @@
 import { useState } from "react"
-import { FormButton, BackButton } from "../../../components/buttons"
+import { FormButton, BackButton } from "../../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../components/style"
-import { ProjectsWrapper } from "./style"
+import Input from "../../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../../components/style"
+import { FormPageWrapper } from "../style"
 
 /*
 Props:
 */
 
-const Projects = ({page, onNextClick, onBackClick}) => {
+const JobSearch2 = ({page, onNextClick, onBackClick}) => {
+  const navigate = useNavigate()
   const onSubmit = (e) => {
     e.preventDefault()
-    onNextClick()
+    navigate("/finish")
   }
 
   return (
-    <ProjectsWrapper page={page}>
+    <FormPageWrapper page={page} thisPage={5}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Projects
+          JobSearch2
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
@@ -31,8 +32,8 @@ const Projects = ({page, onNextClick, onBackClick}) => {
         </div>
         <FormButton/>
       </form>
-    </ProjectsWrapper>
+    </FormPageWrapper>
   )
 }
 
-export default Projects
+export default JobSearch2

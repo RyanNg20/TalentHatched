@@ -1,27 +1,26 @@
 import { useState } from "react"
-import { FormButton, BackButton } from "../../../components/buttons"
+import { FormButton, BackButton } from "../../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../components/style"
-import { JobSearch2Wrapper } from "./style"
+import Input from "../../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../../components/style"
+import { FormPageWrapper } from "../style"
 
 /*
 Props:
 */
 
-const JobSearch2 = ({page, onNextClick, onBackClick}) => {
-  const navigate = useNavigate()
+const JobSearch1 = ({page, onNextClick, onBackClick}) => {
   const onSubmit = (e) => {
     e.preventDefault()
-    navigate("/finish")
+    onNextClick()
   }
 
   return (
-    <JobSearch2Wrapper page={page}>
+    <FormPageWrapper page={page} thisPage={4}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          JobSearch2
+          Job Search 1
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
@@ -32,8 +31,8 @@ const JobSearch2 = ({page, onNextClick, onBackClick}) => {
         </div>
         <FormButton/>
       </form>
-    </JobSearch2Wrapper>
+    </FormPageWrapper>
   )
 }
 
-export default JobSearch2
+export default JobSearch1

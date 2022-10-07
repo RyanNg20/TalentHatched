@@ -40,7 +40,7 @@ export const ItaReg20 = styled.h1`
 
 export const PageWrapper = styled.div`
     padding: 150px 20%;
-    overflow: hidden;
+    overflow-x: hidden;
 `
 
 export const HeaderWrapper = styled.div`
@@ -48,8 +48,4 @@ export const HeaderWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 60px;
-`
-
-export const FormpageWrapper = styled.div`
-
 `

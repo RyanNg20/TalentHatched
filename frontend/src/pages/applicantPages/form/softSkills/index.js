@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { FormButton, BackButton, SelectButton } from "../../../components/buttons"
+import { FormButton, BackButton, SelectButton } from "../../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../components/style"
+import Input from "../../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../../components/style"
+import { FormPageWrapper } from "../style"
 import { OptionWrapper, SoftSkillsWrapper } from "./style"
 
 /*
@@ -31,7 +32,7 @@ const SoftSkills = ({page, onBackClick, onNextClick}) => {
   }
 
   return (
-    <SoftSkillsWrapper page={page}>
+    <FormPageWrapper page={page} thisPage={1}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
@@ -48,7 +49,7 @@ const SoftSkills = ({page, onBackClick, onNextClick}) => {
         </OptionWrapper>
         <FormButton/>
       </form>
-    </SoftSkillsWrapper>
+    </FormPageWrapper>
   )
 }
 

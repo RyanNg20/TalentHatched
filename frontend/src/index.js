@@ -12,14 +12,8 @@ import Error from './pages/error';
 import Flow from './pages/flow';
 import ApplicantProfile from './pages/applicantPages/applicantProfile';
 import Finish from './pages/applicantPages/finish';
-import Info from './pages/applicantPages/info';
 import Jobs from './pages/applicantPages/jobs';
-import JobSearch1 from './pages/applicantPages/jobSearch1';
-import JobSearch2 from './pages/applicantPages/jobSearch2/jobSearch2';
 import JobSettings from './pages/applicantPages/jobSettings';
-import Projects from './pages/applicantPages/projects';
-import Skills from './pages/applicantPages/skills';
-import SoftSkills from './pages/applicantPages/softSkills';
 import Welcome from './pages/applicantPages/welcome';
 import Company from './pages/companyPages/company'
 import CompanyProfile from './pages/companyPages/companyProfile';
