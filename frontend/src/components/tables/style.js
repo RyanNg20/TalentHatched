@@ -15,6 +15,7 @@ export const Line = styled.div`
   width: 1px;
   background-color: ${colors.halfWhite};
   flex-grow: 1;
+  margin-bottom: 70px;
 `
 
 export const Row = styled.div`

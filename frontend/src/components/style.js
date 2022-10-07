@@ -40,6 +40,7 @@ export const ItaReg20 = styled.h1`
 
 export const PageWrapper = styled.div`
     padding: 150px 20%;
+    overflow: hidden;
 `
 
 export const HeaderWrapper = styled.div`

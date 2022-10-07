@@ -22,10 +22,10 @@ export const Button = ({title, disable, type, link}) => {
     )
 }
 
-export const BackButton = ({link}) => {
+export const BackButton = ({link, onClick}) => {
   return (
     <Link to={link} style={{textDecoration: 'none'}}>
-      <ArrowWrapper>
+      <ArrowWrapper onClick={onClick}>
         <IoArrowBackOutline size={24}/>
       </ArrowWrapper>
     </Link>

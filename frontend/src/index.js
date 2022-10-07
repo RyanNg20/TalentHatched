@@ -15,7 +15,7 @@ import Finish from './pages/applicantPages/finish';
 import Info from './pages/applicantPages/info';
 import Jobs from './pages/applicantPages/jobs';
 import JobSearch1 from './pages/applicantPages/jobSearch1';
-import JobSearch2 from './pages/applicantPages/jobSearch2';
+import JobSearch2 from './pages/applicantPages/jobSearch2/jobSearch2';
 import JobSettings from './pages/applicantPages/jobSettings';
 import Projects from './pages/applicantPages/projects';
 import Skills from './pages/applicantPages/skills';
@@ -27,6 +27,7 @@ import Details from './pages/companyPages/details';
 import Entry from './pages/companyPages/entry';
 import Incentives from './pages/companyPages/incentives';
 import Navbar from './components/navbar';
+import Form from './pages/applicantPages/form';
 import { PageWrapper } from './components/style';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -40,14 +41,9 @@ root.render(
           <Route path="flow" element={ <Flow/> } />
           <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
           <Route path="finish" element={ <Finish/> }/>
-          <Route path="info" element={ <Info/> }/>
           <Route path="jobs" element={ <Jobs/> }/>
-          <Route path="jobSearch1" element={ <JobSearch1/> }/>
-          <Route path="jobSearch2" element={ <JobSearch2/> }/>
+          <Route path="form" element={ <Form/> }/>
           <Route path="jobSettings" element={ <JobSettings/> }/>
-          <Route path="projects" element={ <Projects/> }/>
-          <Route path="skills" element={ <Skills/> }/>
-          <Route path="softSkills" element={ <SoftSkills/> }/>
           <Route path="welcome" element={ <Welcome/> }/>
           <Route path="company" element={ <Company/> }/>
           <Route path="companyProfile" element={ <CompanyProfile/> }/>

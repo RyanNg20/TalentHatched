@@ -9,7 +9,7 @@ const Welcome = () => {
   return (
     <div>
       Welcome
-      <Button link="../info"/>
+      <Button link="../form"/>
     </div>
   )
 }
