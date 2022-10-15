@@ -1,5 +1,5 @@
 import colors from "../colors"
-import { Column, Row, Line, TableWrapper } from "./style"
+import { Column, Row, TableLine, TableWrapper } from "./style"
 
 const Tables = ({jsTable}) => {
 
@@ -11,7 +11,7 @@ const Tables = ({jsTable}) => {
             <Row style={{width: 'calc(100% - 10px)'}}>
               <Column style={{width: 150}}>
                 <div style={{minHeight: 70, display: 'flex', alignItems: 'center'}}>{section}</div>
-                <Line/>
+                <TableLine/>
               </Column>
               <Column style={{width: '100%'}}>
                 {

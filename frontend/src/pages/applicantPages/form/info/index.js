@@ -9,7 +9,7 @@ import { FormPageWrapper } from "../style"
 Props:
 */
 
-const Info = ({page, onBackClick, onNextClick}) => {
+const Info = ({page, onBackClick, onNextClick, thisPage}) => {
   const navigate = useNavigate()
 
   const [submit, setSubmit] = useState(false)
@@ -20,11 +20,11 @@ const Info = ({page, onBackClick, onNextClick}) => {
   }
 
   return (
-    <FormPageWrapper page={page} thisPage={0}>
+    <FormPageWrapper page={page} thisPage={thisPage}>
       <HeaderWrapper>
-        <BackButton link={"/welcome"}/>
+        <BackButton onClick={() => {onBackClick()}}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Info
+          Tell us some Info
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">

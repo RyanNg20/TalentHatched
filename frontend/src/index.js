@@ -14,7 +14,6 @@ import ApplicantProfile from './pages/applicantPages/applicantProfile';
 import Finish from './pages/applicantPages/finish';
 import Jobs from './pages/applicantPages/jobs';
 import JobSettings from './pages/applicantPages/jobSettings';
-import Welcome from './pages/applicantPages/welcome';
 import Company from './pages/companyPages/company'
 import CompanyProfile from './pages/companyPages/companyProfile';
 import Details from './pages/companyPages/details';
@@ -38,7 +37,6 @@ root.render(
           <Route path="jobs" element={ <Jobs/> }/>
           <Route path="form" element={ <Form/> }/>
           <Route path="jobSettings" element={ <JobSettings/> }/>
-          <Route path="welcome" element={ <Welcome/> }/>
           <Route path="company" element={ <Company/> }/>
           <Route path="companyProfile" element={ <CompanyProfile/> }/>
           <Route path="details" element={ <Details/> }/>

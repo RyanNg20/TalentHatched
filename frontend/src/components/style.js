@@ -1,10 +1,10 @@
 import styled from 'styled-components'
+import colors from './colors'
 
 export const Bold48 = styled.h1`
     font-size: 48px;
     font-weight: 800;
     font-family: Red Hat Display;
-    margin: 0px;
 `
 
 export const Bold24 = styled.h2`
@@ -39,7 +39,7 @@ export const ItaReg20 = styled.h1`
 `
 
 export const PageWrapper = styled.div`
-    padding: 150px 20%;
+    padding: 50px 0px;
     overflow-x: hidden;
 `
 
@@ -48,4 +48,36 @@ export const HeaderWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 60px;
+`
+
+export const InputsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 100px;
+`
+
+export const TablesWrapper = styled.div`
+    overflow-x: auto;
+    margin: 100px 0px;
+`
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+export const NavWrapper = styled.div`
+    margin: 0px 0px 0px 40px;
+`
+
+export const Line = styled.div`
+    height: 1px;
+    width: 100%;
+    background-color: ${colors.halfWhite}
 `

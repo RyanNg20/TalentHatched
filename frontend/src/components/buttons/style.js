@@ -12,6 +12,7 @@ export const ButtonWrapper = styled.button`
   transition: background-color 0.1s, border 0.1s;
   position: relative;
   margin: ${({margin}) => margin};
+  cursor: pointer;
 `
 
 export const ArrowWrapper = styled.button`
@@ -22,6 +23,8 @@ export const ArrowWrapper = styled.button`
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 3px white;
+  cursor: pointer;
+  margin: ${({margin}) => margin};
 `
 
 export const CheckMarkWrapper = styled.div`

@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom"
 import { Button } from "../../components/buttons"
 import Input from "../../components/input"
-import { Bold48 } from "../../components/style"
+import { Bold48, TablesWrapper } from "../../components/style"
 import Tables from "../../components/tables"
 
 /*
@@ -64,9 +64,9 @@ const CompanyProfile = () => {
       <Bold48>
         CompanyProfile
       </Bold48>
-      <div style={{overflowX: "auto", margin: "100px 0px"}}>
+      <TablesWrapper>
         <Tables jsTable={jsTable}/>
-      </div>
+      </TablesWrapper>
       <Button link="../details"/>
 
     </div>

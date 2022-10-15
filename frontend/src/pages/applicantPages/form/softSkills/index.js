@@ -10,7 +10,7 @@ import { OptionWrapper, SoftSkillsWrapper } from "./style"
 Props:
 */
 
-const SoftSkills = ({page, onBackClick, onNextClick}) => {
+const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
 
   const skillArray = [
     "Adaptability",
@@ -32,11 +32,11 @@ const SoftSkills = ({page, onBackClick, onNextClick}) => {
   }
 
   return (
-    <FormPageWrapper page={page} thisPage={1}>
+    <FormPageWrapper page={page} thisPage={thisPage}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Soft Skills
+          What are your top three soft skills?
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">

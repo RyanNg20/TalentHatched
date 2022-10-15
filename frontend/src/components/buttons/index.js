@@ -4,12 +4,12 @@ import { Reg18 } from "../style"
 import { ButtonWrapper, ArrowWrapper, CheckMarkWrapper } from "./style"
 import { IoArrowBackOutline, IoCheckmarkOutline } from 'react-icons/io5'
 
-export const Button = ({title, disable, link, margin}) => {
+export const Button = ({title, disable, link, margin, onClick}) => {
   if (!disable) disable = false
 
   return (
-    <Link to={link} style={{textDecoration: 'none', margin}}>
-      <ButtonWrapper type="submit" disable={disable}>
+    <Link to={link} style={{textDecoration: 'none'}}>
+      <ButtonWrapper type="button" disable={disable} margin={margin} onClick={() => {onClick()}}>
         <Reg18>
           {title?title:"Next"}
         </Reg18>

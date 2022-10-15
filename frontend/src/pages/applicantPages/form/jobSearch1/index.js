@@ -9,25 +9,25 @@ import { FormPageWrapper } from "../style"
 Props:
 */
 
-const JobSearch1 = ({page, onNextClick, onBackClick}) => {
+const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
   const onSubmit = (e) => {
     e.preventDefault()
     onNextClick()
   }
 
   return (
-    <FormPageWrapper page={page} thisPage={4}>
+    <FormPageWrapper page={page} thisPage={thisPage}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Job Search 1
+          What kind of job do you want?
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <div style={{marginLeft: '100px'}}>
-          <Input type="" title="Name" placeholder="Andrew" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Personal Email" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px"/>
+          <Input type="range" inputType="number" title="Workload" placeholder="24" placeholder2="40" margin="30px 0px" required width="150px" info="How many hours do you want to work?"/>
+          <Input type="dropdown" title="WorkplaceType" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px" info="Where will you be working?"/>
+          <Input type="autofill" title="Skills" placeholder="React" margin="30px 0px" required width="200px" info="What skills do you want to use on the job?"/>
         </div>
         <FormButton/>
       </form>

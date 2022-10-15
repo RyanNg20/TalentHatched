@@ -11,7 +11,7 @@ export const Column = styled.div`
   justify-content: left;
 `
 
-export const Line = styled.div`
+export const TableLine = styled.div`
   width: 1px;
   background-color: ${colors.halfWhite};
   flex-grow: 1;

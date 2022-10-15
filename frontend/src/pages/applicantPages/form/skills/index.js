@@ -2,33 +2,43 @@ import { useState } from "react"
 import { FormButton, BackButton } from "../../../../components/buttons"
 import { useNavigate } from "react-router-dom"
 import Input from "../../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../../components/style"
+import { Bold48, HeaderWrapper, InputsWrapper } from "../../../../components/style"
 import { FormPageWrapper } from "../style"
 
 /*
 Props:
 */
 
-const Skills = ({page, onBackClick, onNextClick}) => {
+const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
   const onSubmit = (e) => {
     e.preventDefault()
     onNextClick()
   }
 
   return (
-    <FormPageWrapper page={page} thisPage={2}>
+    <FormPageWrapper page={page} thisPage={thisPage}>
       <HeaderWrapper>
         <BackButton onClick={onBackClick}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Skills
+          What are your hard skills?
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
-        <div style={{marginLeft: '100px'}}>
-          <Input type="" title="Name" placeholder="Andrew" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Personal Email" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px"/>
-        </div>
+        <InputsWrapper>
+          <div style={{display: 'flex'}}>
+            <Input type="autofill" title="Skills" placeholder="React" margin="30px 0px 0px 0px" required width="300px"/>
+            <Input type="" inputType={"number"} title="Years of Experience" placeholder="2" margin="30px 0px 0px 0px" required width="200px"/>
+          </div>
+          <Input 
+            type="textarea"
+            title="instruction"
+            placeholder="At my chinese school there was an instructor who majored in computer science and he showed me the ropes of using React / React Native and I learned alot!"
+            margin="30px 0px"
+            required
+            width="800px"
+            info="How and where did you learn this skill?"
+          />
+        </InputsWrapper>
         <FormButton/>
       </form>
     </FormPageWrapper>

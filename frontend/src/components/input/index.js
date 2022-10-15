@@ -1,9 +1,14 @@
+import { useState } from "react"
 import colors from "../colors"
 import { Reg16, Reg18 } from "../style"
-import { FormInput, FormSelect, FormTextArea, InputWrapper, TitleWrapper } from "./style"
+import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput } from "./style"
+import { IoInformationOutline } from "react-icons/io5"
 
-const Input = ({title, placeholder, type, margin, required, onChange, width, value}) => {
+const Input = ({title, placeholder, placeholder2, type, inputType, margin, required, onChange, width, value, info, height}) => {
   let inputComponent
+
+  const [infoHover, setInfoHover] = useState(false)
+  const [rangeFocus, setRangeFocus] = useState(false)
 
   switch (type) {
     case "dropdown":
@@ -34,11 +39,19 @@ const Input = ({title, placeholder, type, margin, required, onChange, width, val
         )
         break;
     case "textarea":
-        inputComponent = <FormTextArea type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
-        
+        inputComponent = <FormTextArea type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value} height={height}/>
         break;
+    case "range":
+      inputComponent = (
+        <FormRange width={width} rangeFocus={rangeFocus}>
+          <RangeInput min="0" max="99" size="1" type={inputType} placeholder={placeholder} required={required?required:false} onFocus={() => {setRangeFocus(true)}} onBlur={() => {setRangeFocus(false)}}/>
+          -
+          <RangeInput min="0" max="99" size="1" type={inputType} placeholder={placeholder2} required={required?required:false} onFocus={() => {setRangeFocus(true)}} onBlur={() => {setRangeFocus(false)}}/>
+        </FormRange>
+      )
+      break
     default:
-      inputComponent = <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
+      inputComponent = <FormInput min="0" max="99" type={inputType?inputType:"text"} placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
 
   }
 
@@ -55,6 +68,16 @@ const Input = ({title, placeholder, type, margin, required, onChange, width, val
         }
       </TitleWrapper>
       {inputComponent}
+      {info &&
+        <InfoIconWrapper onMouseEnter={() => {setInfoHover(true)}} onMouseLeave={() => {setInfoHover(false)}} onClick={() => {setInfoHover(!infoHover)}}>
+          <IoInformationOutline/>
+        </InfoIconWrapper>
+      }
+
+      <InfoWrapper infoHover={infoHover}>
+        {info}
+      </InfoWrapper>
+
     </InputWrapper>
   )
 }
