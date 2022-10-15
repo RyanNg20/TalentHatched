@@ -4,7 +4,7 @@ const Flow = () => {
   return (
     <div>
       flow
-      <Link to={"../welcome"}>
+      <Link to={"../form"}>
         Applicant
       </Link>
       <Link to={"../entry"}>

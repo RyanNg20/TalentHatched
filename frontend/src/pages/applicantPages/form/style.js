@@ -3,20 +3,14 @@ import styled from "styled-components";
 export const FormPagesWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 600vw;
-  transform: translateX(${({page}) => page * -100}vw);
-  transition: transform 1s ease, opacity 1s;
+  //150 px should be navbar height + margin
+  height: calc(100% - 200px);
 `
 
 export const FormPageWrapper = styled.div`
-    opacity: ${({page, thisPage}) => page == thisPage?1:0};
-    transition: transform 1s ease, opacity 1s;
-    width: 100%;
-`
-
-export const BoxStyle = styled.button`
-  background-color: red;
-  height: 300px;
-  transition: transform 1s ease, opacity 1s;
-  width: 100%;
+    left: calc(${({page, thisPage}) => (-page + thisPage) * 100}vw + 10%);
+    opacity: ${({page, thisPage}) => page==thisPage?1:0};
+    transition: left 0.5s, opacity 0.5s;
+    position: absolute;
+    width: 80%;
 `

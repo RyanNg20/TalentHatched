@@ -9,5 +9,4 @@ export const WelcomeWrapper = styled.div`
 export const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `

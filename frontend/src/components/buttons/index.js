@@ -8,7 +8,7 @@ export const Button = ({title, disable, link, margin, onClick}) => {
   if (!disable) disable = false
 
   return (
-    <Link to={link} style={{textDecoration: 'none'}}>
+    <Link to={link} style={{textDecoration: 'none', width: 'fit-content', height: 'fit-content'}}>
       <ButtonWrapper type="button" disable={disable} margin={margin} onClick={() => {onClick()}}>
         <Reg18>
           {title?title:"Next"}
@@ -45,7 +45,7 @@ export const FormButton = ({title, disable, margin}) => {
 
 export const BackButton = ({link, onClick, margin}) => {
   return (
-    <Link to={link} style={{textDecoration: 'none', margin}}>
+    <Link to={link} style={{textDecoration: 'none', margin, width: 'fit-content', height: 'fit-content'}}>
       <ArrowWrapper onClick={onClick}>
         <IoArrowBackOutline size={24}/>
       </ArrowWrapper>

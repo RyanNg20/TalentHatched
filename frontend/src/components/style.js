@@ -39,8 +39,11 @@ export const ItaReg20 = styled.h1`
 `
 
 export const PageWrapper = styled.div`
-    padding: 50px 0px;
+    padding: 0px 10%;
     overflow-x: hidden;
+    position: relative;
+    width: 80vw;
+    height: 100vh;
 `
 
 export const HeaderWrapper = styled.div`
@@ -73,7 +76,7 @@ export const Column = styled.div`
 `
 
 export const NavWrapper = styled.div`
-    margin: 0px 0px 0px 40px;
+    margin: 15px 0px 0px 40px;
 `
 
 export const Line = styled.div`

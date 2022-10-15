@@ -10,7 +10,7 @@ import Skills from "./skills"
 import SoftSkills from "./softSkills"
 import Welcome from "./welcome"
 import { FormPagesWrapper } from "./style"
-import Box from "./box"
+
 
 
 /*
@@ -19,8 +19,8 @@ Props:
 
 const Form = () => {
   const navigate = useNavigate()
-  // const FormPages = [Welcome, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
-  const FormPages = [Box, Box, Box, Box, Box, Box,]
+  const FormPages = [Welcome, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
+
   
   const [page, setPage] = useState(0)
 

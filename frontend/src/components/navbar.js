@@ -5,7 +5,7 @@ import { Column, NavWrapper, Row, Line } from "./style"
 
 const Navbar = (props) => {
   return (
-    <Column>
+    <Column style={{height: 150, justifyContent: 'center', marginBottom: 50}}>
       <Row style={{paddingBottom: 20, alignItems: 'center'}}>
         <img src={thLogo} height={60}/>
         <NavWrapper style={{marginLeft: "auto"}}>
