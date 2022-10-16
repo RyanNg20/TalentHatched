@@ -46,8 +46,8 @@ const Entry = (props) => {
             <Reg20>
               Login or Signup
             </Reg20>
-            <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" margin="40px 0px 20px 0px" required onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-            <Input title="Password" placeholder={""} type="default" margin="20px 0px" required onChange={(e) => {setPassword(e.target.value)}} value={password}/>
+            <Input title="Company Email" placeholder={"talenthatched@gmail.com"} type="default" style={{margin: "40px 0px 20px 0px"}} required onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+            <Input title="Password" placeholder={""} type="default" style={{margin:"20px 0px"}} required onChange={(e) => {setPassword(e.target.value)}} value={password}/>
           </div>
           <FormButton title="Create Account" disable={disable}/>
 

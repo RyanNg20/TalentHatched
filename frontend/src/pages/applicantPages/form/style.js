@@ -21,7 +21,3 @@ export const OptionWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 `
-
-export const BodyWrapper = styled.div`
-  margin: 0px 0px 0px 100px;
-`

@@ -28,6 +28,7 @@ export const InputStyle = `
 export const FormSelect = styled.select`
   ${InputStyle}
   width: ${(props) => props.width?props.width:'300px'};
+  appearance: none;
 `
 export const FormInput = styled.input`
   ${InputStyle}

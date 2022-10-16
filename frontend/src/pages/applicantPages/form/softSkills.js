@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { FormButton, SelectButton } from "../../../components/buttons"
-import { Bold48, HeaderWrapper, Row } from "../../../components/style"
-import { BodyWrapper, FormPageWrapper } from "./style"
+import { BodyWrapper, Row } from "../../../components/style"
+import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
 
 /*
@@ -34,10 +34,10 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
       <Header text="What are your top three soft skills?" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Row>
+          <Row style={{transform: `translateX(${page==thisPage?0:100}vw)`, transition: 'transform 1s', transitionDelay: '0ms', transitionProperty: 'transform'}}>
             {skillArray.map((skill, index) => {
               return(
-                <SelectButton title={skill} margin="15px"/>
+                <SelectButton title={skill} margin="15px" key={skill}/>
               )
             })}
           </Row>

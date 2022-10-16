@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { FormButton } from "../../../components/buttons"
 import Input from "../../../components/input"
-import { Column, InputsWrapper, Row } from "../../../components/style"
-import { BodyWrapper, FormPageWrapper } from "./style"
+import { Column, BodyWrapper, Row } from "../../../components/style"
+import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
 
 /*

@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { BoxButton, FormButton } from "../../../components/buttons"
 import Input from "../../../components/input"
-import { BodyWrapper, FormPageWrapper } from "./style"
+import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
+import { BodyWrapper } from "../../../components/style"
 
 /*
 Props:

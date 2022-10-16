@@ -86,3 +86,7 @@ export const Line = styled.div`
     background-color: ${colors.halfWhite}
 `
 
+export const BodyWrapper = styled.div`
+  margin: 0px 0px 0px 100px;
+`
+
