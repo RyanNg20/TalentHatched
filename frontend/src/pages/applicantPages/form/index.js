@@ -4,12 +4,13 @@ import { Button } from "../../../components/buttons"
 import { PageWrapper } from "../../../components/style"
 import Info from "./info"
 import JobSearch1 from "./jobSearch1"
-import JobSearch2 from "./jobSearch2/jobSearch2"
+import JobSearch2 from "./jobSearch2"
 import Projects from "./projects"
 import Skills from "./skills"
 import SoftSkills from "./softSkills"
 import Welcome from "./welcome"
 import { FormPagesWrapper } from "./style"
+import Industry from "./industry"
 
 
 
@@ -19,7 +20,7 @@ Props:
 
 const Form = () => {
   const navigate = useNavigate()
-  const FormPages = [Welcome, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
+  const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
 
   
   const [page, setPage] = useState(0)

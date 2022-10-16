@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { FormButton, BackButton, SelectButton } from "../../../../components/buttons"
+import { FormButton, BackButton, SelectButton } from "../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../../components/style"
-import { FormPageWrapper } from "../style"
+import Input from "../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../components/style"
+import { FormPageWrapper } from "./style"
 import { OptionWrapper, SoftSkillsWrapper } from "./style"
 
 /*

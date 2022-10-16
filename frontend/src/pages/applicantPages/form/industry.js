@@ -1,15 +1,15 @@
 import { useState } from "react"
-import { FormButton, BackButton } from "../../../../components/buttons"
+import { FormButton, BackButton } from "../../../components/buttons"
 import { useNavigate } from "react-router-dom"
-import Input from "../../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../../components/style"
-import { FormPageWrapper } from "../style"
+import Input from "../../../components/input"
+import { Bold48, HeaderWrapper } from "../../../components/style"
+import { FormPageWrapper } from "./style"
 
 /*
 Props:
 */
 
-const Info = ({page, onBackClick, onNextClick, thisPage}) => {
+const Industry = ({page, onBackClick, onNextClick, thisPage}) => {
   const navigate = useNavigate()
 
   const [submit, setSubmit] = useState(false)
@@ -24,7 +24,7 @@ const Info = ({page, onBackClick, onNextClick, thisPage}) => {
       <HeaderWrapper>
         <BackButton onClick={() => {onBackClick()}}/>
         <Bold48 style={{marginLeft: '50px'}}>
-          Tell us some Info
+          Which industries are you interested in?
         </Bold48>
       </HeaderWrapper>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
@@ -39,4 +39,4 @@ const Info = ({page, onBackClick, onNextClick, thisPage}) => {
   )
 }
 
-export default Info
+export default Industry

@@ -1,9 +1,9 @@
 import { Outlet, Link } from "react-router-dom"
-import { Button } from "../../../../components/buttons"
-import { Bold48, Reg20 } from "../../../../components/style"
-import welcomeImage from "../../../../assets/images/welcomeImage.svg"
+import { Button } from "../../../components/buttons"
+import { Bold48, Reg20 } from "../../../components/style"
+import welcomeImage from "../../../assets/images/welcomeImage.svg"
 import { LeftWrapper, WelcomeWrapper } from "./style"
-import { FormPageWrapper } from "../style"
+import { FormPageWrapper } from "./style"
 
 /*
 Props:

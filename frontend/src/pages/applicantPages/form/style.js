@@ -14,3 +14,22 @@ export const FormPageWrapper = styled.div`
     position: absolute;
     width: 80%;
 `
+
+export const OptionWrapper = styled.div`
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1000px;
+`
+
+export const WelcomeWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const LeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
