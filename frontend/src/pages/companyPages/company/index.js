@@ -11,8 +11,6 @@ Props:
 const Company = () => {
   const navigate = useNavigate()
 
-  const [submit, setSubmit] = useState(false)
-
   const onSubmit = (e) => {
     e.preventDefault()
     navigate("/companyProfile")

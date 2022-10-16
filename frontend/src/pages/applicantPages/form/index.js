@@ -9,12 +9,6 @@ import Welcome from "./welcome"
 import { FormPagesWrapper } from "./style"
 import Industry from "./industry"
 
-
-
-/*
-Props:
-*/
-
 const Form = () => {
   const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
 
@@ -22,10 +16,10 @@ const Form = () => {
   const [page, setPage] = useState(0)
 
   const onBackClick = async () => {
-    if (page != 0) setPage(page - 1)
+    if (page != 0) setPage((current) => current - 1)
   }
   const onNextClick = () => {
-    if (page != FormPages.length) setPage(page + 1)
+    if (page != FormPages.length) setPage((current) => current + 1)
   }
 
 

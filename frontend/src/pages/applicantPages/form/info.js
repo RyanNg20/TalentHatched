@@ -20,9 +20,31 @@ const Info = ({page, onBackClick, onNextClick, thisPage}) => {
       <Header text="Tell us some Info" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Input type="" title="Name" placeholder="Andrew" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Phone Number" placeholder="925-111-2222" margin="30px 0px" required width="200px"/>
-          <Input type="" title="Personal Email" placeholder="talenthatched@gmail.com" margin="30px 0px" required width="500px"/>
+          <Input 
+            type=""
+            title="Name"
+            placeholder="Andrew"
+            style={{
+              margin:"30px 0px", transform: `translateX(${page==thisPage?0:100}vw)`, transition: 'transform 1s', transitionDelay: '0ms', transitionProperty: 'transform'
+            }} 
+            required 
+            width="200px"
+          />
+          <Input 
+            type="" 
+            title="Phone Number" 
+            placeholder="925-111-2222" 
+            style={{margin:"30px 0px", transform: `translateX(${page==thisPage?0:100}vw)`, transition: 'transform 1s', transitionDelay: '75ms', transitionProperty: 'transform'}} 
+            required 
+            width="200px"
+          />
+          <Input 
+            type="" 
+            title="Personal Email" 
+            placeholder="talenthatched@gmail.com"
+            style={{margin:"30px 0px", transform: `translateX(${page==thisPage?0:100}vw)`, transition: 'transform 1s', transitionDelay: '150ms', transitionProperty: 'transform'}}
+            required
+            width="500px"/>
         </BodyWrapper>
         <FormButton type={'form'} margin="40px 0px"/>
       </form>

@@ -15,21 +15,12 @@ const Entry = (props) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [submit, setSubmit] = useState(false)
   const [disable, setDisable] = useState(true)
 
   useEffect(() => {
     if (sessionStorage.getItem("email")) setEmail(sessionStorage.getItem("email"))
     if (sessionStorage.getItem("password")) setPassword(sessionStorage.getItem("password"))
   }, [])
-
-  useEffect(() => {
-    sessionStorage.setItem("email", email);
-  }, [email]);
-
-  useEffect(() => {
-    sessionStorage.setItem("password", password);
-  }, [password]);
 
   useEffect(() => {
     if (email && password && disable) setDisable(false)
@@ -39,8 +30,8 @@ const Entry = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault()
     // backend stuff
-    setSubmit(true)
-
+    sessionStorage.setItem("email", email);
+    sessionStorage.setItem("password", password);
     navigate("/company")
   }
 

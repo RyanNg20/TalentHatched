@@ -38,3 +38,11 @@ export const CheckMarkWrapper = styled.div`
   opacity: ${({disable}) => disable?0:1};
   transition: opacity 0.1s;
 `
+
+export const Checkbox = styled.button`
+  height: 15px;
+  width: 15px;
+  border: ${({boxes,index}) => boxes[index]?'none':`1px solid ${colors.halfWhite}`};
+  background-color: ${({boxes,index}) => boxes[index]?colors.orange:'initial'};
+  padding: 0px;
+`

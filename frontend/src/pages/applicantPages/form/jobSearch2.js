@@ -21,9 +21,9 @@ const JobSearch2 = ({page, onNextClick, onBackClick, thisPage}) => {
       <Header text="What do you want to gain from this job?" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Input type="" title="Mentorship" placeholder="" margin="30px 0px" required width="200px" info="What do you want to learn?"/>
-          <Input type="range" inputType="number" title="Pay (USD)" placeholder="20" placeholder2="30" margin="30px 0px" required width="150px" info=""/>
-          <Input type="" title="Benefits" placeholder="Health Insurance" margin="30px 0px" required width="500px" info="What perks do you need?"/>
+          <Input type="" title="Mentorship" placeholder="" style={{margin:"30px 0px"}} required width="200px" info="What do you want to learn?"/>
+          <Input type="range" inputType="number" title="Pay (USD)" placeholder="20" placeholder2="30" style={{margin:"30px 0px"}} required width="150px" info=""/>
+          <Input type="" title="Benefits" placeholder="Health Insurance" style={{margin:"30px 0px"}} required width="150px" info="What perks do you need?"/>
         </BodyWrapper>
         <FormButton/>
       </form>

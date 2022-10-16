@@ -22,15 +22,15 @@ const Projects = ({page, onNextClick, onBackClick, thisPage}) => {
         <BodyWrapper>
           <Column>
             <Row>
-              <Input type="" title="Title" placeholder="Interpolation of the Quantum Realm" margin="30px 0px 0px 0px" required width="200px"/>
-              <Input type="" title="Location" placeholder="https://talenthatched.com" margin="30px 0px 0px 0px" required width="200px" info="Where can employers find this project?"/>
+              <Input type="" title="Title" placeholder="Interpolation of the Quantum Realm" style={{margin:"30px 0px 0px 0px"}} required width="200px"/>
+              <Input type="" title="Location" placeholder="https://talenthatched.com" style={{margin:"30px 0px 0px 0px"}} required width="200px" info="Where can employers find this project?"/>
             </Row>
             <Input
               type="textarea"
               title="Description"
               placeholder="Talent Hatched is a multigenerational company looking to revolutionize the job market with new and 
                 innovative ways to employ and fund lower education students through an app that connects students to job opportunities."
-              margin="30px 0px 80px 0px"
+                style={{margin:"30px 0px 80px 0px"}}
               required
               width="800px"
               height="80px"

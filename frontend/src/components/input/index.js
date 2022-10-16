@@ -4,7 +4,7 @@ import { Reg16, Reg18 } from "../style"
 import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput } from "./style"
 import { IoInformationOutline } from "react-icons/io5"
 
-const Input = ({title, placeholder, placeholder2, type, inputType, margin, required, onChange, width, value, info, height}) => {
+const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height}) => {
   let inputComponent
 
   const [infoHover, setInfoHover] = useState(false)
@@ -56,7 +56,7 @@ const Input = ({title, placeholder, placeholder2, type, inputType, margin, requi
   }
 
   return (
-    <InputWrapper margin={margin}>
+    <InputWrapper style={style}>
       <TitleWrapper>
         <label>
           <Reg16>

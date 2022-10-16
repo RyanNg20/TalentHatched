@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Reg18 } from "../style"
-import { ButtonWrapper, ArrowWrapper, CheckMarkWrapper } from "./style"
+import { Reg18, Row } from "../style"
+import { ButtonWrapper, ArrowWrapper, CheckMarkWrapper, Checkbox } from "./style"
 import { IoArrowBackOutline, IoCheckmarkOutline } from 'react-icons/io5'
+import colors from "../colors"
 
 export const Button = ({title, disable, link, margin, onClick}) => {
   if (!disable) disable = false
@@ -50,5 +51,31 @@ export const BackButton = ({link, onClick, margin}) => {
         <IoArrowBackOutline size={24}/>
       </ArrowWrapper>
     </Link>
+  )
+}
+export const BoxButton = ({title, boxes, setBoxes, index, style}) => {
+  return (
+    <Row style={{alignItems: 'center', ...style}}>
+      <Checkbox
+        type="button"
+        onClick={() => {
+          setBoxes((current) => {
+            let temp = new Array(current.length).fill(false)
+            temp.forEach((val, index) => {
+              temp[index] = current[index]
+            })
+            temp[index] = !temp[index]
+            return temp
+          })
+        }}
+        boxes={boxes}
+        index={index}
+      >
+        <IoCheckmarkOutline color={colors.white} style={{opacity: boxes[index]?1:0}}/>
+      </Checkbox>
+      <Reg18 style={{marginLeft: 20}}>
+        {title}
+      </Reg18>
+    </Row>
   )
 }
