@@ -14,37 +14,34 @@ const Info = ({page, onBackClick, onNextClick, thisPage}) => {
     e.preventDefault()
     onNextClick()
   }
-
+  const inputs = ["Name", "Phone Number", "Personal Email"]
+  const inputPlaceholders = ["Andrew", "925-111-2222", "talenthatched@gmail.com"]
+  const inputWidths = ['200px', '200px', '500px']
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
       <Header text="Tell us some Info" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Input 
-            type=""
-            title="Name"
-            placeholder="Andrew"
-            style={{
-              margin:"30px 0px", transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: '0ms', transitionProperty: 'transform'
-            }} 
-            required 
-            width="200px"
-          />
-          <Input 
-            type="" 
-            title="Phone Number" 
-            placeholder="925-111-2222" 
-            style={{margin:"30px 0px", transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: '75ms', transitionProperty: 'transform'}} 
-            required 
-            width="200px"
-          />
-          <Input 
-            type="" 
-            title="Personal Email" 
-            placeholder="talenthatched@gmail.com"
-            style={{margin:"30px 0px", transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: '150ms', transitionProperty: 'transform'}}
-            required
-            width="500px"/>
+          {inputs.map((title, index) => {
+            return (
+              <Input
+                key={title}
+                type=""
+                title={title}
+                placeholder={inputPlaceholders[index]}
+                style={{
+                  margin:"30px 0px",
+                  transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`,
+                  transition: 'transform 1s',
+                  transitionDelay: `${index * 75}ms`,
+                  transitionProperty: 'transform',
+                  pointerEvents: page==thisPage?'initial':'none',
+                }} 
+                required 
+                width={inputWidths[index]}
+              />
+            )
+          })}
         </BodyWrapper>
         <FormButton type={'form'}/>
       </form>

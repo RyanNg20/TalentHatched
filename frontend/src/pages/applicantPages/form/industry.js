@@ -25,8 +25,18 @@ const Industry = ({page, onBackClick, onNextClick, thisPage}) => {
         <BodyWrapper>
           {boxNames.map((name, index) => {
             return (
-              <BoxButton title={name} index={index} boxes={boxes} setBoxes={setBoxes} 
-                style={{margin: "30px 0px", transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: `${75 * index}ms`, transitionProperty: 'transform'}}
+              <BoxButton
+                key={name}
+                title={name} 
+                index={index} 
+                boxes={boxes} 
+                setBoxes={setBoxes} 
+                style={{
+                  margin: "30px 0px",
+                  transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`,
+                  transition: 'transform 1s', transitionDelay: `${75 * index}ms`,
+                  transitionProperty: 'transform'
+                }}
               />
             )
           })}

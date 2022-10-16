@@ -20,7 +20,6 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
     "Teamwork",
     "Time Management",
     "Problem Solving",
-    "Customer Service",
     "Willingness to Learn",
   ]
 
@@ -34,10 +33,10 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
       <Header text="What are your top three soft skills?" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s'}}>
+          <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', pointerEvents: page==thisPage?'initial':'none',}}>
             {skillArray.map((skill, index) => {
               return(
-                <SelectButton title={skill} margin="15px"/>
+                <SelectButton title={skill} margin="15px" key={skill}/>
               )
             })}
           </Row>
