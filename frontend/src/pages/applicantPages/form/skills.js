@@ -21,7 +21,7 @@ const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
           <Column>
-            <Row>
+            <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', pointerEvents: page==thisPage?'initial':'none',}}>
               <Input type="autofill" title="Skills" placeholder="React" style={{margin:"30px 0px"}} required width="300px"/>
               <Input type="" inputType={"number"} title="Years of Experience" placeholder="2" style={{margin:"30px 0px"}} required width="200px"/>
             </Row>
@@ -29,7 +29,7 @@ const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
               type="textarea"
               title="instruction"
               placeholder="At my chinese school there was an instructor who majored in computer science and he showed me the ropes of using React / React Native and I learned alot!"
-              style={{margin:"30px 0px"}}
+              style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: `75ms`, transitionProperty: 'transform', pointerEvents: page==thisPage?'initial':'none',}}
               required
               width="800px"
               info="How and where did you learn this skill?"

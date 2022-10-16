@@ -34,9 +34,9 @@ export const SelectButton = ({title, margin}) => {
   )
 }
 
-export const FormButton = ({title, disable, margin}) => {
+export const FormButton = ({title, disable, style}) => {
   return(
-    <ButtonWrapper type="submit" disable={disable} margin={margin}>
+    <ButtonWrapper type="submit" disable={disable} style={style}>
       <Reg18>
         {title?title:"Next"}
       </Reg18>

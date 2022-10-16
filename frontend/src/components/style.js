@@ -87,6 +87,6 @@ export const Line = styled.div`
 `
 
 export const BodyWrapper = styled.div`
-  margin: 0px 0px 0px 100px;
+  margin: 50px 0px 70px  100px;
 `
 
