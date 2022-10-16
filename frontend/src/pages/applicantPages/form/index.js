@@ -27,7 +27,7 @@ const Form = () => {
     <FormPagesWrapper page={page}>
       {FormPages.map((FormPage, index) => {
         return (
-          <FormPage page={page} onBackClick={onBackClick} onNextClick={onNextClick} thisPage={index}/>
+          <FormPage page={page} onBackClick={onBackClick} onNextClick={onNextClick} thisPage={index} key={FormPage}/>
         )
       })}
     </FormPagesWrapper>
