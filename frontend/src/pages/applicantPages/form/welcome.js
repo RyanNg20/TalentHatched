@@ -1,8 +1,6 @@
-import { Outlet, Link } from "react-router-dom"
 import { Button } from "../../../components/buttons"
-import { Bold48, Reg20 } from "../../../components/style"
+import { Bold48, Column, Reg20, Row } from "../../../components/style"
 import welcomeImage from "../../../assets/images/welcomeImage.svg"
-import { LeftWrapper, WelcomeWrapper } from "./style"
 import { FormPageWrapper } from "./style"
 
 /*
@@ -12,8 +10,8 @@ Props:
 const Welcome = ({page, onNextClick, thisPage}) => {
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
-      <WelcomeWrapper>
-        <LeftWrapper>
+      <Row>
+        <Column>
           <Bold48>
             Welcome
           </Bold48>
@@ -21,9 +19,9 @@ const Welcome = ({page, onNextClick, thisPage}) => {
             Ready to set up your profile?
           </Reg20>
           <Button margin="20px 0px" onClick={() => {onNextClick()}}/>
-        </LeftWrapper>
+        </Column>
         <img src={welcomeImage}/>
-      </WelcomeWrapper>
+      </Row>
     </FormPageWrapper>
   )
 }

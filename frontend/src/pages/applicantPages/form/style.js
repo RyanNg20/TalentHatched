@@ -20,16 +20,8 @@ export const OptionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1000px;
 `
 
-export const WelcomeWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-export const LeftWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const BodyWrapper = styled.div`
+  margin: 0px 0px 0px 100px;
 `

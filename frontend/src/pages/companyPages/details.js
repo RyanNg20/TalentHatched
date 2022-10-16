@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom"
 import { Button } from "../../components/buttons"
 import colors from "../../components/colors"
 import { Reg20 } from "../../components/style"
-import { Column, Row } from "../../components/tables/style"
+import { Column, Row } from "../../components/style"
 
 /*
 Props:

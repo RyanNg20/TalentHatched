@@ -1,5 +1,6 @@
 import colors from "../colors"
-import { Column, Row, TableLine, TableWrapper } from "./style"
+import { TableLine, TableWrapper } from "./style"
+import { Column, Row } from "../style"
 
 const Tables = ({jsTable}) => {
 

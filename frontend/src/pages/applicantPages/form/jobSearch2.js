@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { FormButton, BackButton } from "../../../components/buttons"
+import { FormButton } from "../../../components/buttons"
 import { useNavigate } from "react-router-dom"
 import Input from "../../../components/input"
-import { Bold48, HeaderWrapper } from "../../../components/style"
-import { FormPageWrapper } from "./style"
+import { BodyWrapper, FormPageWrapper } from "./style"
+import Header from "../../../components/header"
 
 /*
 Props:
@@ -18,18 +18,13 @@ const JobSearch2 = ({page, onNextClick, onBackClick, thisPage}) => {
 
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
-      <HeaderWrapper>
-        <BackButton onClick={onBackClick}/>
-        <Bold48 style={{marginLeft: '50px'}}>
-          What do you want to gain from that job?
-        </Bold48>
-      </HeaderWrapper>
+      <Header text="What do you want to gain from this job?" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
-        <div style={{marginLeft: '100px'}}>
+        <BodyWrapper>
           <Input type="" title="Mentorship" placeholder="" margin="30px 0px" required width="200px" info="What do you want to learn?"/>
           <Input type="range" inputType="number" title="Pay (USD)" placeholder="20" placeholder2="30" margin="30px 0px" required width="150px" info=""/>
           <Input type="" title="Benefits" placeholder="Health Insurance" margin="30px 0px" required width="500px" info="What perks do you need?"/>
-        </div>
+        </BodyWrapper>
         <FormButton/>
       </form>
     </FormPageWrapper>

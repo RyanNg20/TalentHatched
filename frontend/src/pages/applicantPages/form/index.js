@@ -1,7 +1,4 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Button } from "../../../components/buttons"
-import { PageWrapper } from "../../../components/style"
 import Info from "./info"
 import JobSearch1 from "./jobSearch1"
 import JobSearch2 from "./jobSearch2"
@@ -19,7 +16,6 @@ Props:
 */
 
 const Form = () => {
-  const navigate = useNavigate()
   const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
 
   
