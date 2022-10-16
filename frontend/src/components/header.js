@@ -5,7 +5,7 @@ const Header = ({text, onClick}) => {
   return (
     <HeaderWrapper>
       <BackButton onClick={onClick}/>
-      <Bold48 style={{marginLeft: '50px'}}>
+      <Bold48 style={{margin: '0px 0px 0px 50px'}}>
         {text}
       </Bold48>
     </HeaderWrapper>

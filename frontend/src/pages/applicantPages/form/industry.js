@@ -26,12 +26,12 @@ const Industry = ({page, onBackClick, onNextClick, thisPage}) => {
           {boxNames.map((name, index) => {
             return (
               <BoxButton title={name} index={index} boxes={boxes} setBoxes={setBoxes} 
-                style={{margin: "30px 0px", transform: `translateX(${page==thisPage?0:100}vw)`, transition: 'transform 1s', transitionDelay: `${75 * index}ms`, transitionProperty: 'transform'}}
+                style={{margin: "30px 0px", transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', transitionDelay: `${75 * index}ms`, transitionProperty: 'transform'}}
               />
             )
           })}
         </BodyWrapper>
-        <FormButton type={'form'} margin="40px 0px"/>
+        <FormButton type={'form'}/>
       </form>
     </FormPageWrapper>
   )

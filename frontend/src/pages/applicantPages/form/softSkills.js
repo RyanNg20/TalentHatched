@@ -34,7 +34,7 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
       <Header text="What are your top three soft skills?" onClick={onBackClick}/>
       <form onSubmit={(e) => {onSubmit(e)}} id="form">
         <BodyWrapper>
-          <Row>
+          <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s'}}>
             {skillArray.map((skill, index) => {
               return(
                 <SelectButton title={skill} margin="15px"/>
