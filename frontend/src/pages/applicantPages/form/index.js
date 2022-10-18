@@ -12,7 +12,6 @@ import Industry from "./industry"
 const Form = () => {
   const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
 
-  
   const [page, setPage] = useState(0)
 
   const onBackClick = async () => {

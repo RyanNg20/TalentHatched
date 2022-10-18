@@ -67,13 +67,11 @@ export const TablesWrapper = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 `
 
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 `
 
 export const NavWrapper = styled.div`

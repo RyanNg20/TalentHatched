@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FormButton } from "../../../components/buttons"
-import Input from "../../../components/input"
+import { Input } from "../../../components/input"
 import { Column, BodyWrapper, Row } from "../../../components/style"
 import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
@@ -18,7 +18,7 @@ const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
       <Header text="What are your hard skills?" onClick={onBackClick}/>
-      <form onSubmit={(e) => {onSubmit(e)}} id="form">
+      <form onSubmit={onSubmit}>
         <BodyWrapper>
           <Column>
             <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', pointerEvents: page==thisPage?'initial':'none',}}>

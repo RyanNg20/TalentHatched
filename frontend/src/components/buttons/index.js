@@ -10,7 +10,7 @@ export const Button = ({title, disable, link, margin, onClick}) => {
 
   return (
     <Link to={link} style={{textDecoration: 'none', width: 'fit-content', height: 'fit-content'}}>
-      <ButtonWrapper type="button" disable={disable} margin={margin} onClick={() => {onClick()}}>
+      <ButtonWrapper type="button" disable={disable} margin={margin} onClick={onClick}>
         <Reg18>
           {title?title:"Next"}
         </Reg18>
@@ -51,31 +51,5 @@ export const BackButton = ({link, onClick, margin}) => {
         <IoArrowBackOutline size={24}/>
       </ArrowWrapper>
     </Link>
-  )
-}
-export const BoxButton = ({title, boxes, setBoxes, index, style}) => {
-  return (
-    <Row style={{alignItems: 'center', ...style}}>
-      <Checkbox
-        type="button"
-        onClick={() => {
-          setBoxes((current) => {
-            let temp = new Array(current.length).fill(false)
-            temp.forEach((val, index) => {
-              temp[index] = current[index]
-            })
-            temp[index] = !temp[index]
-            return temp
-          })
-        }}
-        boxes={boxes}
-        index={index}
-      >
-        <IoCheckmarkOutline color={colors.white} style={{opacity: boxes[index]?1:0}}/>
-      </Checkbox>
-      <Reg18 style={{marginLeft: 20}}>
-        {title}
-      </Reg18>
-    </Row>
   )
 }

@@ -1,10 +1,10 @@
 import { useState } from "react"
 import colors from "../colors"
-import { Reg16, Reg18 } from "../style"
-import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput } from "./style"
+import { Reg16, Reg18, Row } from "../style"
+import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput, Checkbox } from "./style"
 import { IoInformationOutline } from "react-icons/io5"
 
-const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height}) => {
+export const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height, minLength, maxLength, onInvalid, onInput, inputRef}) => {
   let inputComponent
 
   const [infoHover, setInfoHover] = useState(false)
@@ -13,7 +13,7 @@ const Input = ({title, placeholder, placeholder2, type, inputType, required, onC
   switch (type) {
     case "dropdown":
       inputComponent = (
-        <FormSelect type="text" placeholder={placeholder} required={required?required:false} width={width}>
+        <FormSelect type="text" placeholder={placeholder} required={required?required:false} width={width} onInvalid={onInvalid} ref={inputRef}>
           <option value="Chrome" style={{color: colors.black}}>Chrome</option>
           <option value="Firefox" style={{color: colors.black}}>Firefox</option>
           <option value="Internet Explorer" style={{color: colors.black}}> Internet Explorer</option>
@@ -26,7 +26,20 @@ const Input = ({title, placeholder, placeholder2, type, inputType, required, onC
     case "autofill":
         inputComponent = (
           <>
-            <FormInput type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} list={'browsers'} width={width} value={value}/>
+            <FormInput 
+              type="text"
+              placeholder={placeholder} 
+              required={required?required:false} 
+              onChange={onChange} 
+              onInput={onInput}
+              list={'browsers'} 
+              width={width} 
+              value={value} 
+              minLength={minLength} 
+              maxLength={maxLength}
+              onInvalid={onInvalid}
+              ref={inputRef}
+            />
             <datalist id="browsers">
               <option value="Chrome"></option>
               <option value="Firefox"></option>
@@ -39,19 +52,72 @@ const Input = ({title, placeholder, placeholder2, type, inputType, required, onC
         )
         break;
     case "textarea":
-        inputComponent = <FormTextArea type="text" placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value} height={height}/>
+        inputComponent = (
+          <FormTextArea 
+            type="text"
+            placeholder={placeholder} 
+            required={required?required:false} 
+            onChange={onChange} 
+            onInput={onInput}
+            width={width} 
+            value={value} 
+            height={height}
+            minLength={minLength} 
+            maxLength={maxLength}
+            onInvalid={onInvalid}
+            ref={inputRef}
+          />
+        )
         break;
     case "range":
       inputComponent = (
         <FormRange width={width} rangeFocus={rangeFocus}>
-          <RangeInput min="0" max="99" size="1" type={inputType} placeholder={placeholder} required={required?required:false} onFocus={() => {setRangeFocus(true)}} onBlur={() => {setRangeFocus(false)}}/>
+          <RangeInput 
+            min="0" 
+            max="99" 
+            size="1" 
+            type={inputType} 
+            placeholder={placeholder} 
+            required={required?required:false} 
+            onFocus={() => {setRangeFocus(true)}} 
+            onBlur={() => {setRangeFocus(false)}}
+            onInvalid={onInvalid}
+            onInput={onInput}
+          />
           -
-          <RangeInput min="0" max="99" size="1" type={inputType} placeholder={placeholder2} required={required?required:false} onFocus={() => {setRangeFocus(true)}} onBlur={() => {setRangeFocus(false)}}/>
+          <RangeInput 
+            min="0" 
+            max="99" 
+            size="1" 
+            type={inputType} 
+            placeholder={placeholder2} 
+            required={required?required:false} 
+            onFocus={() => {setRangeFocus(true)}} 
+            onBlur={() => {setRangeFocus(false)}}
+            onInvalid={onInvalid}
+            onInput={onInput}
+          />
         </FormRange>
       )
       break
     default:
-      inputComponent = <FormInput min="0" max="99" type={inputType?inputType:"text"} placeholder={placeholder} required={required?required:false} onChange={onChange} width={width} value={value}/>
+      inputComponent = (
+        <FormInput 
+          min="0" 
+          max="99" 
+          type={inputType?inputType:"text"} 
+          placeholder={placeholder} 
+          required={required?required:false} 
+          onChange={onChange}
+          onInput={onInput}
+          width={width} 
+          value={value}
+          minLength={minLength} 
+          maxLength={maxLength}
+          onInvalid={onInvalid}
+          ref={inputRef}
+        />
+      )
 
   }
 
@@ -82,4 +148,20 @@ const Input = ({title, placeholder, placeholder2, type, inputType, required, onC
   )
 }
 
-export default Input
+export const BoxInput = ({title, index, style,  required, inputRef}) => {
+  return (
+    <Row style={{alignItems: 'center', ...style}}>
+      <Checkbox
+        ref={inputRef}
+        type="checkbox"
+        index={index}
+        required={required?required:false}
+      >
+        {/* <IoCheckmarkOutline color={colors.white} style={{opacity: boxes[index]?1:0}}/> */}
+      </Checkbox>
+      <Reg18 style={{marginLeft: 20}}>
+        {title}
+      </Reg18>
+    </Row>
+  )
+}

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { FormButton, SelectButton } from "../../../components/buttons"
 import { BodyWrapper, Row } from "../../../components/style"
 import { FormPageWrapper } from "./style"
@@ -22,6 +22,10 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
     "Problem Solving",
     "Willingness to Learn",
   ]
+  // const skillRefs = []
+  // skillArray.forEach((val, index) => {
+  //   skillRefs[index] = useRef(null)
+  // })
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -31,9 +35,9 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
       <Header text="What are your top three soft skills?" onClick={onBackClick}/>
-      <form onSubmit={(e) => {onSubmit(e)}} id="form">
+      <form onSubmit={onSubmit}>
         <BodyWrapper>
-          <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', pointerEvents: page==thisPage?'initial':'none',}}>
+          <Row style={{flexWrap: 'wrap'}}>
             {skillArray.map((skill, index) => {
               return(
                 <SelectButton title={skill} margin="15px" key={skill}/>

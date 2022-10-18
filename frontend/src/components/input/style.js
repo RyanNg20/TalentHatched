@@ -91,3 +91,9 @@ export const InfoWrapper = styled.div`
   border: solid 1px ${colors.halfWhite};
   padding: 10px;
 `
+
+export const Checkbox = styled.input`
+  height: 15px;
+  width: 15px;
+  padding: 0px;
+  `

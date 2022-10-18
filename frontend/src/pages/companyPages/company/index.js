@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { BackButton, FormButton } from "../../../components/buttons"
 import Header from "../../../components/header"
-import Input from "../../../components/input"
+import { Input } from "../../../components/input"
 import { Bold48, HeaderWrapper, BodyWrapper } from "../../../components/style"
 
 /*

@@ -4,7 +4,7 @@ import { FormButton } from "../../../components/buttons"
 import { Bold48, Bold24, Reg20 } from "../../../components/style"
 import EntryImage from '../../../assets/images/entryImage.svg'
 import { BottomWrapper, LeftWrapper } from "./style"
-import Input from "../../../components/input"
+import { Input } from "../../../components/input"
 
 /*
 Props:
