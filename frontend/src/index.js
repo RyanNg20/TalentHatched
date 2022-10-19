@@ -11,7 +11,6 @@ import reportWebVitals from './reportWebVitals';
 import Error from './pages/error';
 import Flow from './pages/flow';
 import ApplicantProfile from './pages/applicantPages/applicantProfile';
-import Finish from './pages/applicantPages/finish';
 import Jobs from './pages/applicantPages/jobs';
 import JobSettings from './pages/applicantPages/jobSettings';
 import Company from './pages/companyPages/company'
@@ -33,7 +32,6 @@ root.render(
           <Route path="" element={ <App/>} />
           <Route path="flow" element={ <Flow/> } />
           <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
-          <Route path="finish" element={ <Finish/> }/>
           <Route path="jobs" element={ <Jobs/> }/>
           <Route path="form" element={ <Form/> }/>
           <Route path="jobSettings" element={ <JobSettings/> }/>

@@ -13,6 +13,7 @@ body {
   color: white;
   text-decoration: none;
   font-family: Red Hat Display;
+  accent-color: red;
 }
 
 @font-face {

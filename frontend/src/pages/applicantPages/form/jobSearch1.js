@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef } from "react"
 import { FormButton } from "../../../components/buttons"
 import { Input } from "../../../components/input"
 import { FormPageWrapper } from "./style"
@@ -10,14 +10,21 @@ Props:
 */
 
 const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
+
+  const workloadRef = useRef()
+  const workloadRef2 = useRef()
+  const worktypeRef = useRef()
+  const skillsRef = useRef()
+
   const onSubmit = (e) => {
     e.preventDefault()
+    console.log(workloadRef.current.value, workloadRef2.current.value, worktypeRef.current.value, skillsRef.current.value)
     onNextClick()
   }
 
   return (
     <FormPageWrapper page={page} thisPage={thisPage}>
-      <Header text="What kind of job do you want?" onClick={onBackClick}/>
+      <Header text="What kind of job do you want?" onClick={onBackClick} />
       <form onSubmit={onSubmit}>
         <BodyWrapper>
           <Input 
@@ -36,6 +43,9 @@ const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
             required
             width="150px"
             info="How many hours do you want to work?"
+            
+            inputRef={workloadRef}
+            inputRef2={workloadRef2}
           />
           <Input 
             type="dropdown" 
@@ -51,6 +61,7 @@ const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
             required
             width="500px"
             info="Where will you be working?"
+            inputRef={worktypeRef}
           />
           <Input 
             type="autofill"
@@ -66,6 +77,7 @@ const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
             required
             width="200px"
             info="What skills do you want to use on the job?"
+            inputRef={skillsRef}
           />
         </BodyWrapper>
         <FormButton/>

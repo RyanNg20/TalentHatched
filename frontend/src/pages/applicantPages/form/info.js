@@ -4,7 +4,7 @@ import { Input } from "../../../components/input"
 import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
 import { BodyWrapper } from "../../../components/style"
-import { name, phone } from "../../../components/inputValidation"
+import { onlyLetters, phone } from "../../../components/inputValidation"
 
 /*
 Props:
@@ -20,8 +20,8 @@ const Info = ({page, onBackClick, onNextClick, thisPage}) => {
   const inputPlaceholders = ["Andrew", "Yang", "9251112222", "talenthatched@gmail.com"]
   const inputWidths = ['200px', '200px', '200px', '500px']
   const inputInputTypes = ["text", "text", "tel", "email"]
-  const inputInvalid = [name, name, phone, null]
-  const inputOnInput = [name, name, phone, null]
+  const inputInvalid = [onlyLetters, onlyLetters, phone, null]
+  const inputOnInput = [onlyLetters, onlyLetters, phone, null]
   const inputRefs = [fnameRef, lnameRef, phoneRef, emailRef]
 
   const onSubmit = (e) => {

@@ -8,9 +8,10 @@ import SoftSkills from "./softSkills"
 import Welcome from "./welcome"
 import { FormPagesWrapper } from "./style"
 import Industry from "./industry"
+import Finish from "./finish"
 
 const Form = () => {
-  const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2]
+  const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2, Finish]
 
   const [page, setPage] = useState(0)
 

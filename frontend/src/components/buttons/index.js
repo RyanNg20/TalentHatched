@@ -19,15 +19,19 @@ export const Button = ({title, disable, link, margin, onClick}) => {
   )
 }
 
-export const SelectButton = ({title, margin}) => {
-  const [disable, setDisable] = useState(true)
+export const SelectButton = ({title, margin, disable, onClick, index}) => {
 
   return (
-    <ButtonWrapper type="button" disable={disable} onClick={() => {setDisable(!disable)}} margin={margin}>
+    <ButtonWrapper
+      type="button"
+      disable={disable[index]}
+      onClick={onClick}
+      margin={margin}
+    >
       <Reg18>
         {title?title:"Next"}
       </Reg18>
-      <CheckMarkWrapper disable={disable}>
+      <CheckMarkWrapper disable={disable[index]}>
         <IoCheckmarkOutline size={18}/>
       </CheckMarkWrapper>
     </ButtonWrapper>

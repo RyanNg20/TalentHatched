@@ -96,4 +96,6 @@ export const Checkbox = styled.input`
   height: 15px;
   width: 15px;
   padding: 0px;
-  `
+  //doesnt work in Opera Gx I guess?
+  accent-color: ${colors.denim};
+`

@@ -1,4 +1,4 @@
-export const name = (e) => {
+export const onlyLetters = (e) => {
   const value = e.target.value
   const onlyLetters = /^[A-Za-z]*$/
 

@@ -4,7 +4,7 @@ import { Reg16, Reg18, Row } from "../style"
 import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput, Checkbox } from "./style"
 import { IoInformationOutline } from "react-icons/io5"
 
-export const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height, minLength, maxLength, onInvalid, onInput, inputRef}) => {
+export const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height, minLength, maxLength, onInvalid, onInput, inputRef, inputRef2}) => {
   let inputComponent
 
   const [infoHover, setInfoHover] = useState(false)
@@ -83,6 +83,7 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
             onBlur={() => {setRangeFocus(false)}}
             onInvalid={onInvalid}
             onInput={onInput}
+            ref={inputRef}
           />
           -
           <RangeInput 
@@ -96,6 +97,7 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
             onBlur={() => {setRangeFocus(false)}}
             onInvalid={onInvalid}
             onInput={onInput}
+            ref={inputRef2}
           />
         </FormRange>
       )
@@ -148,7 +150,7 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
   )
 }
 
-export const BoxInput = ({title, index, style,  required, inputRef}) => {
+export const BoxInput = ({title, index, style, required, inputRef}) => {
   return (
     <Row style={{alignItems: 'center', ...style}}>
       <Checkbox
