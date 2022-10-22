@@ -11,7 +11,7 @@ import Industry from "./industry"
 import Finish from "./finish"
 
 const Form = () => {
-  const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, JobSearch1, JobSearch2, Finish]
+  const FormPages = [Welcome, Industry, Info, SoftSkills, Skills, Projects, Finish]
 
   const [page, setPage] = useState(0)
 

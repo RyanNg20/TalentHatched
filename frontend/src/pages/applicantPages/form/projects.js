@@ -4,7 +4,7 @@ import { Input } from "../../../components/input"
 import { Column, InputsWrapper, Row, BodyWrapper } from "../../../components/style"
 import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
-import { onlyLetters } from "../../../components/inputValidation"
+import { letterSpaces, onlyLetters } from "../../../components/inputValidation"
 
 
 /*
@@ -38,15 +38,14 @@ const Projects = ({page, onNextClick, onBackClick, thisPage}) => {
                 required
                 width="200px"
                 inputRef={titleRef}
-                onInput={onlyLetters}
-                onInvalid={onlyLetters}
+                onInput={letterSpaces}
+                onInvalid={letterSpaces}
               />
               <Input
                 type=""
                 title="Location"
                 placeholder="https://talenthatched.com"
                 style={{margin:"30px 0px 0px 0px"}}
-                required
                 width="200px"
                 info="Where can employers find this project?"
                 inputRef={locationRef}

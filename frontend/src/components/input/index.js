@@ -58,13 +58,11 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
             placeholder={placeholder} 
             required={required?required:false} 
             onChange={onChange} 
-            onInput={onInput}
             width={width} 
             value={value} 
             height={height}
             minLength={minLength} 
             maxLength={maxLength}
-            onInvalid={onInvalid}
             ref={inputRef}
           />
         )

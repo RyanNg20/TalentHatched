@@ -4,7 +4,7 @@ import { Input } from "../../../components/input"
 import { Column, BodyWrapper, Row } from "../../../components/style"
 import { FormPageWrapper } from "./style"
 import Header from "../../../components/header"
-import { onlyLetters } from "../../../components/inputValidation"
+import { letterSpaces } from "../../../components/inputValidation"
 
 /*
 Props:
@@ -15,7 +15,7 @@ const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
   const skillRef = useRef()
   const yoeRef = useRef()
   const instructionRef = useRef()
-
+  // console.log(skillRef.current.value, yoeRef.current.value, instructionRef.current.value)
   const onSubmit = (e) => {
     console.log(skillRef.current.value, yoeRef.current.value, instructionRef.current.value)
     e.preventDefault()
@@ -29,7 +29,7 @@ const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
         <BodyWrapper>
           <Column>
             <Row style={{transform: `translateX(${page==thisPage?0:page<thisPage?-100:100}vw)`, transition: 'transform 1s', pointerEvents: page==thisPage?'initial':'none',}}>
-              <Input type="autofill" title="Skills" placeholder="React" style={{margin:"30px 0px"}} required width="300px" inputRef={skillRef} onInput={onlyLetters} onInvalid={onlyLetters}/>
+              <Input type="autofill" title="Skills" placeholder="React" style={{margin:"30px 0px"}} required width="300px" inputRef={skillRef} onInput={letterSpaces} onInvalid={letterSpaces}/>
               <Input type="" inputType={"number"} title="Years of Experience" placeholder="2" style={{margin:"30px 0px"}} required width="200px" inputRef={yoeRef}/>
             </Row>
             <Input 

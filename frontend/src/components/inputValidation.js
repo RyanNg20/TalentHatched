@@ -7,6 +7,15 @@ export const onlyLetters = (e) => {
   else e.target.setCustomValidity("")
 }
 
+export const letterSpaces = (e) => {
+  const value = e.target.value
+  const letterSpaces = /^[a-zA-Z\s]*$/
+
+  if (value == "") e.target.setCustomValidity("")
+  else if (!letterSpaces.test(value)) e.target.setCustomValidity("Should only contain letters")
+  else e.target.setCustomValidity("")
+}
+
 export const phone = (e) => {
   const value = e.target.value
   const hasLetters = /[a-zA-Z]/

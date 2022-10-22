@@ -7,8 +7,8 @@ export const Bold48 = styled.h1`
     font-family: Red Hat Display;
 `
 
-export const Bold24 = styled.h2`
-    font-size: 24px;
+export const Bold32 = styled.h2`
+    font-size: 32px;
     font-weight: 700;
     font-family: Red Hat Display;
     margin: 0px;

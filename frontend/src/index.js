@@ -16,11 +16,12 @@ import JobSettings from './pages/applicantPages/jobSettings';
 import Company from './pages/companyPages/company'
 import CompanyProfile from './pages/companyPages/companyProfile';
 import Details from './pages/companyPages/details';
-import Entry from './pages/companyPages/entry';
+import Login from './pages/login';
 import Incentives from './pages/companyPages/incentives';
 import Navbar from './components/navbar';
 import Form from './pages/applicantPages/form';
 import { PageWrapper } from './components/style';
+import Signup from './pages/signup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,8 @@ root.render(
         <Navbar/>
         <Routes>
           <Route path="" element={ <App/>} />
+          <Route path="login" element={ <Login/> }/>
+          <Route path="signup" element={ <Signup/> }/>
           <Route path="flow" element={ <Flow/> } />
           <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
           <Route path="jobs" element={ <Jobs/> }/>
@@ -38,7 +41,6 @@ root.render(
           <Route path="company" element={ <Company/> }/>
           <Route path="companyProfile" element={ <CompanyProfile/> }/>
           <Route path="details" element={ <Details/> }/>
-          <Route path="entry" element={ <Entry/> }/>
           <Route path="incentives" element={ <Incentives/> }/>
         </Routes>
       </PageWrapper>

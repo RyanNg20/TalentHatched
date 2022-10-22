@@ -7,6 +7,7 @@ const colors = {
   slate: "#303439",
   halfWhite: "#8C8E91",
   red: "#FA3E3E",
+  link: "#1D9BF0",
 }
 
 export default colors
