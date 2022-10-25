@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
+const path = require('path')
 
 const app = express()
 
@@ -14,6 +15,19 @@ app.use((req, res, next) => {
 })
 
 app.use('/api', routes)
+
+app.use(express.static(path.join(__dirname, "./frontend/build")))
+
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./frontend/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    }
+  )
+})
 
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
