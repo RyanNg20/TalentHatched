@@ -5,13 +5,14 @@ const logIn = async (req,res) => {
   const {email, password} = req.query
 
   try {
-    const user = await models.Users.find({email, password}).sort({createdAt: -1})
-    console.log(user[0])
+    const user = await models.Users.find({email}).sort({createdAt: -1})
     if (user[0]) {
-      res.status(200).json(user[0])
+      if (user[0].password == password) res.status(200).json(user[0])
+      else res.status(400).send("Password does not match")
     }
     else res.status(400).send("User not found")
   } catch (err) {
+    console.log("err")
     res.status(400).json({error: err})
   }
 }
@@ -31,7 +32,7 @@ const signUp = async (req,res) => {
       res.status(400).json({error: err})
     }
   }
-  else res.status(300).send("No Email or Passowrd")
+  else res.status(400).send("User did not submit Username/Password")
 }
 
 const updateUser = async(req, res) => {

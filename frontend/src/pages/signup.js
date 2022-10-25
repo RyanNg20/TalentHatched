@@ -43,16 +43,19 @@ const Signup = (props) => {
     if (response.ok) {
       const json = await response.json()
       console.log(json)
-      navigate("/flow")
+      if (json.type) {
+        if (json.fname && json.lname) navigate('/applicantProfile')
+        else navigate('/form')
+      }
+      else navigate("/flow")
       setUid(json._id)
+    } else {
+      const text = await response.text()
+      alert(text)
     }
-    else (
-      alert("Could Not Find User")
-    )
 
     sessionStorage.setItem("email", email);
     sessionStorage.setItem("password", password);
-    navigate("/flow")
   }
 
   return (

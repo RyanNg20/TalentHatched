@@ -9,7 +9,7 @@ const Tables = ({jsTable}) => {
       {
         Object.keys(jsTable).map((section, index) => {
           return (
-            <Row style={{width: 'calc(100% - 10px)'}}>
+            <Row style={{width: 'calc(100% - 10px)'}} key={section}>
               <Column style={{width: 150}}>
                 <div style={{minHeight: 70, display: 'flex', alignItems: 'center'}}>{section}</div>
                 <TableLine/>
@@ -22,12 +22,23 @@ const Tables = ({jsTable}) => {
                       if (index == 0) backgroundColor = colors.slate
                       else if ( index % 2 == 0) backgroundColor = colors.spruce
                       return (
-                        <Row style={{minHeight: 70, alignItems: 'center', display: 'flex', width: '90%', backgroundColor: backgroundColor, padding: "0px 5%", transform: "skew(-15deg)"}}>
+                        <Row 
+                          style={{
+                            minHeight: 70,
+                            alignItems: 'center',
+                            display: 'flex',
+                            width: '90%',
+                            backgroundColor: backgroundColor,
+                            padding: "0px 5%",
+                            transform: "skew(-15deg)"
+                          }}
+                          key={row}
+                        >
                           {
                             row.map((content, index) => {
 
                               return (
-                                <div style={{width: jsTable[section].rowWidth[index]}}>
+                                <div style={{width: jsTable[section].rowWidth[index]}} key={content}>
                                   {content}
                                 </div>
                               )

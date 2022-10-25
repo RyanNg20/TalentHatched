@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c297e423.css",
-    "main.js": "/static/js/main.cc67a0dc.js",
+    "main.js": "/static/js/main.a15580d8.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/RedHatDisplay-Italic-VariableFont_wght.ttf": "/static/media/RedHatDisplay-Italic-VariableFont_wght.153955fa79cbca8297e9.ttf",
     "static/media/RedHatDisplay-VariableFont_wght.ttf": "/static/media/RedHatDisplay-VariableFont_wght.efce1fc0edae25633558.ttf",
@@ -11,11 +11,11 @@
     "static/media/thlogo.svg": "/static/media/thlogo.61f4c2640df89fa87a12cc3de64e5d83.svg",
     "index.html": "/index.html",
     "main.c297e423.css.map": "/static/css/main.c297e423.css.map",
-    "main.cc67a0dc.js.map": "/static/js/main.cc67a0dc.js.map",
+    "main.a15580d8.js.map": "/static/js/main.a15580d8.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c297e423.css",
-    "static/js/main.cc67a0dc.js"
+    "static/js/main.a15580d8.js"
   ]
 }
