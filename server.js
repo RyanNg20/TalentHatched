@@ -12,12 +12,16 @@ app.use(express.json())
 
 app.use(cors())
 
-app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next()
-})
+app.get("/api", (req, res) => {
+  res.send("Express on Vercel");
+});
 
-app.use('/api', routes)
+// app.use((req, res, next) => {
+//   console.log(req.path, req.method)
+//   next()
+// })
+
+// app.use('/api', routes)
 
 app.use(express.static(path.join(__dirname, "./frontend/build")))
 
@@ -32,14 +36,17 @@ app.get("*", function (_, res) {
   )
 })
 
-mongoose.connect(process.env.MONG_URI)
-.then(() => {
-  app.listen(process.env.PORT, () => {
-    console.log("listening on port", process.env.PORT)
-  })
+app.listen(5000, () => {
+  console.log("running on port 5000")
 })
-.catch((err) => {
-  console.log(err)
-})
+// mongoose.connect(process.env.MONG_URI)
+// .then(() => {
+//   app.listen(process.env.PORT, () => {
+//     console.log("listening on port", process.env.PORT)
+//   })
+// })
+// .catch((err) => {
+//   console.log(err)
+// })
 
 module.exports = app
