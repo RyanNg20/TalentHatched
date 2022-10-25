@@ -2,13 +2,14 @@ import { useState } from "react"
 import colors from "../colors"
 import { Reg16, Reg18, Row } from "../style"
 import { FormInput, FormSelect, FormTextArea, InfoWrapper, InfoIconWrapper, InputWrapper, TitleWrapper, FormRange, RangeInput, Checkbox } from "./style"
-import { IoInformationOutline } from "react-icons/io5"
+import { IoInformationOutline, IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 
 export const Input = ({title, placeholder, placeholder2, type, inputType, required, onChange, style, value, info, width, height, minLength, maxLength, onInvalid, onInput, inputRef, inputRef2}) => {
   let inputComponent
 
   const [infoHover, setInfoHover] = useState(false)
   const [rangeFocus, setRangeFocus] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   switch (type) {
     case "dropdown":
@@ -105,7 +106,7 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
         <FormInput 
           min="0" 
           max="99" 
-          type={inputType?inputType:"text"} 
+          type={inputType?(inputType=="password" && showPassword?"text":inputType):"text"} 
           placeholder={placeholder} 
           required={required?required:false} 
           onChange={onChange}
@@ -120,7 +121,9 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
       )
 
   }
-
+  if (info) {
+    console.log("hi")
+  }
   return (
     <InputWrapper style={style}>
       <TitleWrapper>
@@ -134,15 +137,22 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
         }
       </TitleWrapper>
       {inputComponent}
-      {info &&
-        <InfoIconWrapper onMouseEnter={() => {setInfoHover(true)}} onMouseLeave={() => {setInfoHover(false)}} onClick={() => {setInfoHover(!infoHover)}}>
-          <IoInformationOutline/>
-        </InfoIconWrapper>
+      {info && 
+        <>
+          <InfoIconWrapper onMouseEnter={() => {setInfoHover(true)}} onMouseLeave={() => {setInfoHover(false)}} onClick={() => {setInfoHover(!infoHover)}} info={info}>
+            <IoInformationOutline/>
+          </InfoIconWrapper>
+          <InfoWrapper infoHover={infoHover}>
+            {info}
+          </InfoWrapper>
+        </>
       }
-
-      <InfoWrapper infoHover={infoHover}>
-        {info}
-      </InfoWrapper>
+      {inputType == "password" &&
+        (showPassword?
+          <IoEyeOutline style={{position: 'absolute', right: 10, cursor: "pointer"}} size={25} onClick={() => {setShowPassword(false)}}/>:
+          <IoEyeOffOutline style={{position: 'absolute', right: 10, cursor: "pointer"}} size={25} onClick={() => {setShowPassword(true)}}/>
+        )
+      }
 
     </InputWrapper>
   )

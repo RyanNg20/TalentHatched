@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
+  type: {
+    type: String,
+    required: false,
+  },
   email: {
     type: String,
     required: false,
@@ -11,7 +15,11 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
-  name: {
+  fname: {
+    type: String,
+    required: false,
+  },
+  lname: {
     type: String,
     required: false,
   },
@@ -27,8 +35,8 @@ const userSchema = new Schema({
     type: [String],
     required: false,
   },
-  skills: {
-    type: [{skillName: String, yoe: Number, instruction: String}],
+  hardSkills: {
+    type: [{skill: String, yoe: Number, instruction: String}],
     required: false,
   },
   projects: {

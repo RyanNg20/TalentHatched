@@ -35,6 +35,6 @@ export const CheckMarkWrapper = styled.div`
   border: solid ${colors.white} 1px;
   border-radius: 50px;
   padding: 3px 3px 2px 3px;
-  opacity: ${({disable}) => disable?0:1};
+  opacity: ${({selected}) => selected?1:0};
   transition: opacity 0.1s;
 `

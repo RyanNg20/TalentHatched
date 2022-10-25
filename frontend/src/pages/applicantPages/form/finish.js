@@ -16,7 +16,7 @@ const Finish = ({page, thisPage, onNextClick, onBackClick}) => {
           <Reg20 style={{margin: "20px 0px 40px 0px"}}>
             You've completed your profile
           </Reg20>
-          <Button link="../applicantProfile" margin="20px 0px"/>
+          <Button onClick={onNextClick} margin="20px 0px"/>
         </Column>
         <img src={finishImage}/>
       </Row>

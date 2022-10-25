@@ -22,29 +22,32 @@ import Navbar from './components/navbar';
 import Form from './pages/applicantPages/form';
 import { PageWrapper } from './components/style';
 import Signup from './pages/signup';
+import { UserProvider } from './components/userContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <PageWrapper>
-        <Navbar/>
-        <Routes>
-          <Route path="" element={ <App/>} />
-          <Route path="login" element={ <Login/> }/>
-          <Route path="signup" element={ <Signup/> }/>
-          <Route path="flow" element={ <Flow/> } />
-          <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
-          <Route path="jobs" element={ <Jobs/> }/>
-          <Route path="form" element={ <Form/> }/>
-          <Route path="jobSettings" element={ <JobSettings/> }/>
-          <Route path="company" element={ <Company/> }/>
-          <Route path="companyProfile" element={ <CompanyProfile/> }/>
-          <Route path="details" element={ <Details/> }/>
-          <Route path="incentives" element={ <Incentives/> }/>
-        </Routes>
-      </PageWrapper>
-    </Router>
+    <UserProvider>
+      <Router>
+        <PageWrapper>
+          <Navbar/>
+          <Routes>
+            <Route path="" element={ <App/>} />
+            <Route path="login" element={ <Login/> }/>
+            <Route path="signup" element={ <Signup/> }/>
+            <Route path="flow" element={ <Flow/> } />
+            <Route path="applicantProfile" element={ <ApplicantProfile/> }/>
+            <Route path="jobs" element={ <Jobs/> }/>
+            <Route path="form" element={ <Form/> }/>
+            <Route path="jobSettings" element={ <JobSettings/> }/>
+            <Route path="company" element={ <Company/> }/>
+            <Route path="companyProfile" element={ <CompanyProfile/> }/>
+            <Route path="details" element={ <Details/> }/>
+            <Route path="incentives" element={ <Incentives/> }/>
+          </Routes>
+        </PageWrapper>
+      </Router>
+    </UserProvider>
   </React.StrictMode>
 );
 

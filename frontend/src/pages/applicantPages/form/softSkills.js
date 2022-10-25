@@ -8,31 +8,17 @@ import Header from "../../../components/header"
 Props:
 */
 
-const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
+const SoftSkills = ({page, onBackClick, onNextClick, thisPage, softSkillNames, softSkills, setSoftSkills}) => {
 
-  const skillArray = [
-    "Adaptability",
-    "Communication",
-    "Conflict Management",
-    "Creativity",
-    "Customer Service",
-    "Emotional Intelligence",
-    "Teamwork",
-    "Time Management",
-    "Problem Solving",
-    "Willingness to Learn",
-  ]
-  const [disable, setDisable] = useState(new Array(skillArray.length).fill(true))
   const inputRef = useRef()
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(disable)
     onNextClick()
   }
   const checkRequired = (temp) => {
     let count = 0
     temp.forEach((val, index) => {
-      if (!val) count++
+      if (val) count++
     })
     if (count >= 3) return false
     return true
@@ -43,23 +29,22 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
       <form onSubmit={onSubmit}>
         <BodyWrapper>
           <Row style={{flexWrap: 'wrap'}}>
-            {skillArray.map((skill, index) => {
+            {softSkillNames.map((skill, index) => {
               return(
                 <SelectButton
                   title={skill}
                   margin="30px 15px 0px 15px"
                   key={skill}
-                  disable={disable}
-                  setDisable={setDisable}
+                  selected={softSkills}
                   index={index}
                   inputRef={inputRef}
                   onClick={() => {
-                    let temp = new Array(disable.length).fill(true)
+                    let temp = new Array(softSkills.length).fill(false)
                     temp.forEach((val, index) => {
-                      temp[index] = disable[index]
+                      temp[index] = softSkills[index]
                     })
                     temp[index] = !temp[index]
-                    setDisable(temp)
+                    setSoftSkills(temp)
 
                     if (inputRef.current) {
                       if (checkRequired(temp)) inputRef.current.setCustomValidity("Please Select 3 Soft Skills")
@@ -72,7 +57,7 @@ const SoftSkills = ({page, onBackClick, onNextClick, thisPage}) => {
           </Row>
           <input 
             style={{pointerEvents: 'none', opacity: 0, marginLeft: 15, height: 0}}
-            required={checkRequired(disable)}
+            required={checkRequired(softSkills)}
             onInvalid={(e) => {
               e.target.setCustomValidity("Please Select 3 Soft Skills")
             }}

@@ -10,22 +10,17 @@ import { onlyLetters, phone } from "../../../components/inputValidation"
 Props:
 */
 
-const Info = ({page, onBackClick, onNextClick, thisPage}) => {
-  const fnameRef = useRef(null)
-  const lnameRef = useRef(null)
-  const phoneRef = useRef(null)
-  const emailRef = useRef(null)
+const Info = ({page, onBackClick, onNextClick, thisPage, fnameRef, lnameRef, phoneRef}) => {
   
-  const inputs = ["First Name", "Last Name", "Phone Number", "Personal Email"]
-  const inputPlaceholders = ["Andrew", "Yang", "9251112222", "talenthatched@gmail.com"]
-  const inputWidths = ['200px', '200px', '200px', '500px']
-  const inputInputTypes = ["text", "text", "tel", "email"]
-  const inputInvalid = [onlyLetters, onlyLetters, phone, null]
-  const inputOnInput = [onlyLetters, onlyLetters, phone, null]
-  const inputRefs = [fnameRef, lnameRef, phoneRef, emailRef]
+  const inputs = ["First Name", "Last Name", "Phone Number"]
+  const inputPlaceholders = ["Andrew", "Yang", "9251112222"]
+  const inputWidths = ['200px', '200px', '200px']
+  const inputInputTypes = ["text", "text", "tel"]
+  const inputInvalid = [onlyLetters, onlyLetters, phone]
+  const inputOnInput = [onlyLetters, onlyLetters, phone]
+  const inputRefs = [fnameRef, lnameRef, phoneRef]
 
   const onSubmit = (e) => {
-    console.log(fnameRef.current.value, lnameRef.current.value, phoneRef.current.value, emailRef.current.value,)
     e.preventDefault()
     onNextClick()
   }

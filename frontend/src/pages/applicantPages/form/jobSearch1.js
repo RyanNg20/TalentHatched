@@ -18,7 +18,6 @@ const JobSearch1 = ({page, onNextClick, onBackClick, thisPage}) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(workloadRef.current.value, workloadRef2.current.value, worktypeRef.current.value, skillsRef.current.value)
     onNextClick()
   }
 

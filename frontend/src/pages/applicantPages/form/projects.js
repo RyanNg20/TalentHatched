@@ -11,15 +11,10 @@ import { letterSpaces, onlyLetters } from "../../../components/inputValidation"
 Props:
 */
 
-const Projects = ({page, onNextClick, onBackClick, thisPage}) => {
-
-  const titleRef = useRef()
-  const locationRef = useRef()
-  const descriptionRef = useRef()
+const Projects = ({page, onNextClick, onBackClick, thisPage, titleRef, locationRef, descriptionRef}) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(titleRef.current.value, locationRef.current.value, descriptionRef.current.value)
     onNextClick()
   }
 

@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { FormButton } from "../components/buttons"
 import { Bold48, Bold24, Reg20, Column, Row, Reg18 } from "../components/style"
 import EntryImage from '../assets/images/entryImage.svg'
 import { Input } from "../components/input"
 import colors from "../components/colors"
+import UserContext from "../components/userContext"
 
 /*
 Props:
@@ -13,8 +14,10 @@ Props:
 const Signup = (props) => {
   const navigate = useNavigate()
 
+  const { uid, setUid } = useContext(UserContext)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [disable, setDisable] = useState(true)
 
   useEffect(() => {
@@ -30,6 +33,23 @@ const Signup = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault()
     // backend stuff
+    const response = await fetch('/api/user', {
+      method: "POST",
+      body: JSON.stringify({email, password}),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    if (response.ok) {
+      const json = await response.json()
+      console.log(json)
+      navigate("/flow")
+      setUid(json._id)
+    }
+    else (
+      alert("Could Not Find User")
+    )
+
     sessionStorage.setItem("email", email);
     sessionStorage.setItem("password", password);
     navigate("/flow")
@@ -40,22 +60,48 @@ const Signup = (props) => {
       <Row>
         <Column>
           <Bold48 style={{marginBottom: '20px'}}>
-            Login
+            Sign Up
           </Bold48>
           <Row>
             <Reg18>
               Already have an account?&nbsp;
             </Reg18>
-            <Reg18 style={{color: colors.link}} onClick={() => {navigate('../login')}}>
+            <Reg18 style={{color: colors.link, cursor: "pointer" }} onClick={() => {navigate('../login')}}>
               Log in
             </Reg18>
           </Row>
-          <Input title="Email" placeholder={"talenthatched@gmail.com"} type="default" style={{margin: "40px 0px 20px 0px"}} required onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-          <Input title="Password" placeholder={""} type="default" style={{margin:"20px 0px"}} required onChange={(e) => {setPassword(e.target.value)}} value={password}/>
+          <Input
+            title="Email"
+            placeholder={"talenthatched@gmail.com"}
+            type="default"
+            style={{margin: "40px 0px 20px 0px"}}
+            required
+            onChange={(e) => {setEmail(e.target.value)}}
+            value={email}
+          />
+          <Input 
+            title="Password"
+            placeholder={""}
+            type="default"
+            style={{margin:"20px 0px"}}
+            required
+            onChange={(e) => {setPassword(e.target.value)}}
+            value={password}
+            inputType="password"
+          />
+          {/* <Input 
+            title="Confirm Password"
+            placeholder={""}
+            type="default"
+            style={{margin:"20px 0px"}}
+            required
+            onChange={(e) => {setConfirmPassword(e.target.value)}}
+            value={password}
+            inputType="password"
+          /> */}
           <FormButton title="Create Account" disable={disable}/>
-
         </Column>
-        <img src={EntryImage}/>
+        <img src={EntryImage} style={{marginLeft: 100}}/>
       </Row>
     </form>
   )

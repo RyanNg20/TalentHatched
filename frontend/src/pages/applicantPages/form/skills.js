@@ -10,14 +10,9 @@ import { letterSpaces } from "../../../components/inputValidation"
 Props:
 */
 
-const Skills = ({page, onBackClick, onNextClick, thisPage}) => {
+const Skills = ({page, onBackClick, onNextClick, thisPage, skillRef, yoeRef, instructionRef}) => {
 
-  const skillRef = useRef()
-  const yoeRef = useRef()
-  const instructionRef = useRef()
-  // console.log(skillRef.current.value, yoeRef.current.value, instructionRef.current.value)
   const onSubmit = (e) => {
-    console.log(skillRef.current.value, yoeRef.current.value, instructionRef.current.value)
     e.preventDefault()
     onNextClick()
   }

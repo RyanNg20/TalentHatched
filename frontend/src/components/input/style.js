@@ -90,6 +90,7 @@ export const InfoWrapper = styled.div`
   border-radius: 5px;
   border: solid 1px ${colors.halfWhite};
   padding: 10px;
+  position: relative;
 `
 
 export const Checkbox = styled.input`

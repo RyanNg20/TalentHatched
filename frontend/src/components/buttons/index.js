@@ -4,6 +4,7 @@ import { Reg18, Row } from "../style"
 import { ButtonWrapper, ArrowWrapper, CheckMarkWrapper, Checkbox } from "./style"
 import { IoArrowBackOutline, IoCheckmarkOutline } from 'react-icons/io5'
 import colors from "../colors"
+import SoftSkills from "../../pages/applicantPages/form/softSkills"
 
 export const Button = ({title, disable, link, margin, onClick}) => {
   if (!disable) disable = false
@@ -19,19 +20,19 @@ export const Button = ({title, disable, link, margin, onClick}) => {
   )
 }
 
-export const SelectButton = ({title, margin, disable, onClick, index}) => {
+export const SelectButton = ({title, margin, selected, onClick, index}) => {
 
   return (
     <ButtonWrapper
       type="button"
-      disable={disable[index]}
+      disable={!selected[index]}
       onClick={onClick}
       margin={margin}
     >
       <Reg18>
         {title?title:"Next"}
       </Reg18>
-      <CheckMarkWrapper disable={disable[index]}>
+      <CheckMarkWrapper selected={selected[index]}>
         <IoCheckmarkOutline size={18}/>
       </CheckMarkWrapper>
     </ButtonWrapper>
