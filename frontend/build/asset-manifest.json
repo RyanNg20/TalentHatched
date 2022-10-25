@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c297e423.css",
+    "main.js": "/static/js/main.cc67a0dc.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/RedHatDisplay-Italic-VariableFont_wght.ttf": "/static/media/RedHatDisplay-Italic-VariableFont_wght.153955fa79cbca8297e9.ttf",
+    "static/media/RedHatDisplay-VariableFont_wght.ttf": "/static/media/RedHatDisplay-VariableFont_wght.efce1fc0edae25633558.ttf",
+    "static/media/entryImage.svg": "/static/media/entryImage.e1e5fa92e51a4587553126339b1245fd.svg",
+    "static/media/finishImage.svg": "/static/media/finishImage.2dbc6175a5bc191490c72b031e875090.svg",
+    "static/media/welcomeImage.svg": "/static/media/welcomeImage.7150e93f04cddf3b3533711a63e5bb8c.svg",
+    "static/media/thlogo.svg": "/static/media/thlogo.61f4c2640df89fa87a12cc3de64e5d83.svg",
+    "index.html": "/index.html",
+    "main.c297e423.css.map": "/static/css/main.c297e423.css.map",
+    "main.cc67a0dc.js.map": "/static/js/main.cc67a0dc.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c297e423.css",
+    "static/js/main.cc67a0dc.js"
+  ]
+}
