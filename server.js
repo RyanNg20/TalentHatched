@@ -16,11 +16,13 @@ app.use((req, res, next) => {
 app.use('/api', routes)
 
 mongoose.connect(process.env.MONG_URI)
-  .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log("listening on port", process.env.PORT)
-    })
+.then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log("listening on port", process.env.PORT)
   })
-  .catch((err) => {
-    console.log(err)
-  })
+})
+.catch((err) => {
+  console.log(err)
+})
+
+module.exports = app
