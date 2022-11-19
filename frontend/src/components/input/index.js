@@ -121,9 +121,6 @@ export const Input = ({title, placeholder, placeholder2, type, inputType, requir
       )
 
   }
-  if (info) {
-    console.log("hi")
-  }
   return (
     <InputWrapper style={style}>
       <TitleWrapper>

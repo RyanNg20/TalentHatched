@@ -9,6 +9,7 @@ const Flow = () => {
   const { uid } = useContext(UserContext)
 
   const onOptionClick = async (type) => {
+    console.log(uid)
     if (uid) {
       const response = await fetch("/api/user", {
         method: "PUT",

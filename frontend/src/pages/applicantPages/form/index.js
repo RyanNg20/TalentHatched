@@ -123,7 +123,6 @@ const Form = () => {
   const onNextClick = () => {
     if (page < FormPages.length - 1) setPage((current) => current + 1)
     else {
-      console.log("hi")
       storeUserData()
     }
   }
